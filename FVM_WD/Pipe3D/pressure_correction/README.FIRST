@@ -1,0 +1,25 @@
+Use this case to compare incompressible and compressible solvers.
+
+You can run the cases individually or using the provided runall.sh script (runs sequencially) 
+
+After getting the solution use the script gnuplot_script to plot the solution, e.g.
+
+	gnuplot gnuplot_script
+
+The gnuplot script will plot the solution of icoFoam vs rhoPimpleFoam.
+
+To get the same results with a incompressible solver and a compressible solver, 
+we need to correct incompressible solver (icoFoam in this case).  
+
+In the solution of the incompressible solver, first we add the reference pressure (101325) 
+and then we multiply by the reference density, which in this case is equal ro 1.177 (air at 300 K).
+
+Remember, the pressure reported by the incompressible solvers is relative and divided by rho (p/rho).
+
+Same correction applies to wall shear stresses
+
+
+
+
+incompressible => icoFoam
+compressible => rhoPimpleFoam

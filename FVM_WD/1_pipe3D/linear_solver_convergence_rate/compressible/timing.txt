@@ -1,0 +1,190 @@
+Old timings
+
+
+
+Linear solvers for p
+
+Running in parallel with 4 cores
+Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
+
+************************************************************************************* 
+       
+	solver          smoothSolver;
+        //smoother  	symGaussSeidel;
+        smoother  		FDIC;
+        tolerance       1e-06;
+        relTol          0.01; 
+
+ExecutionTime = 12.04 s  ClockTime = 13 s
+ATTENTION UNCONVERGED ITERATIONS!
+
+************************************************************************************* 
+
+
+
+************************************************************************************* 
+
+RenumberMesh +
+       
+	solver          smoothSolver;
+        //smoother  	symGaussSeidel;
+        smoother  		FDIC;
+        tolerance       1e-06;
+        relTol          0.01; 
+
+ExecutionTime = 13.03 s  ClockTime = 14 s
+ATTENTION UNCONVERGED ITERATIONS!
+
+************************************************************************************* 
+
+
+
+************************************************************************************* 
+
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       1e-05;
+            relTol          0;
+            smoother        GaussSeidel;
+            nPreSweeps      0;
+            nPostSweeps     2;
+            nFinestSweeps   2;
+            cacheAgglomeration on;
+            nCellsInCoarsestLevel 10;
+            agglomerator    faceAreaPair;
+            mergeLevels     1;
+        }
+
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 5.27 s  ClockTime = 6 s
+
+************************************************************************************* 
+
+
+
+************************************************************************************* 
+
+RenumberMesh +
+
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       1e-05;
+            relTol          0;
+            smoother        GaussSeidel;
+            nPreSweeps      0;
+            nPostSweeps     2;
+            nFinestSweeps   2;
+            cacheAgglomeration on;
+            nCellsInCoarsestLevel 10;
+            agglomerator    faceAreaPair;
+            mergeLevels     1;
+        }
+
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 5.25 s  ClockTime = 5 s
+
+************************************************************************************* 
+
+
+
+************************************************************************************* 
+
+        solver           GAMG;
+        tolerance        1e-6;
+        relTol           0.01;
+        smoother         GaussSeidel;
+        nPreSweeps       0;
+        nPostSweeps      2;
+        cacheAgglomeration on;
+        agglomerator     faceAreaPair;
+        nCellsInCoarsestLevel 100;
+        mergeLevels      1;
+
+ExecutionTime = 24.68 s  ClockTime = 25 s
+
+************************************************************************************* 
+
+
+
+************************************************************************************* 
+
+RenumberMesh +
+
+        solver           GAMG;
+        tolerance        1e-6;
+        relTol           0.01;
+        smoother         GaussSeidel;
+        nPreSweeps       0;
+        nPostSweeps      2;
+        cacheAgglomeration on;
+        agglomerator     faceAreaPair;
+        nCellsInCoarsestLevel 100;
+        mergeLevels      1;
+
+ExecutionTime = 25.2 s  ClockTime = 25 s
+
+************************************************************************************* 
+
+
+
+*************************************************************************************
+
+	solver          PBiCGStab;
+        preconditioner  FDIC;
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 8.56 s  ClockTime = 9 s
+
+*************************************************************************************
+
+
+
+*************************************************************************************
+
+RenumberMesh +
+
+	solver          PBiCGStab;
+        preconditioner  FDIC;
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 9.1 s  ClockTime = 10 s
+
+*************************************************************************************
+
+
+
+*************************************************************************************
+
+	solver          PCG;
+        preconditioner  FDIC; //DIC FDIC diagonal GAMG
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 4.85 s  ClockTime = 5 s
+
+*************************************************************************************
+
+
+
+*************************************************************************************
+
+RenumberMesh +
+
+	solver          PCG;
+        preconditioner  FDIC; //DIC FDIC diagonal GAMG
+        tolerance       1e-06;
+        relTol          0.01;
+
+ExecutionTime = 4.54 s  ClockTime = 4 s
+
+*************************************************************************************

@@ -1,0 +1,36 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeaturesDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaces
+(
+    "wolfExtruded.stl"
+    "selection1.stl"
+);
+
+// Identify edges when angle between faces < includedAngle
+includedAngle       150; // 120 - 150 
+
+
+subsetFeatures
+{
+    nonManifoldEdges       no;
+    openEdges           yes;
+}
+
+// Write features to obj format for visualisation
+writeObj            yes;
+verboseObj          no;
+
+// ************************************************************************* //

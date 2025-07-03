@@ -1,0 +1,100 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : reconstructPar
+Date   : Jun 01 2025
+Time   : 20:14:47
+Host   : "ElMakinon"
+PID    : 10054
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+
+Time = 1s
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        cellLevel
+
+Reconstructing point fields
+
+    Reconstructing pointScalarFields
+
+        pointLevel
+
+Time = 2s
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        cellLevel
+
+Reconstructing point fields
+
+    Reconstructing pointScalarFields
+
+        pointLevel
+
+Time = 3s
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nSurfaceLayers
+        thickness
+        thicknessFraction
+        cellLevel
+
+Reconstructing point fields
+
+    Reconstructing pointScalarFields
+
+        pointLevel
+
+End
+

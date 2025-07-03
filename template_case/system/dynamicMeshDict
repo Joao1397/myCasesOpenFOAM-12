@@ -1,0 +1,119 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      dynamicMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+mover
+{
+    type            motionSolver; // Mesh motion based on solved mesh motion for rigid body motion. The meshing motion is calculated based on the pressures on those boundaries.
+    libs            ("libsixDoFRigidBodyMotion.so"); // incluiding libraries
+    motionSolver    sixDoFRigidBodyMotion;
+    //patch name
+    patches         (wing);
+    innerDistance   0.3;
+    outerDistance   1;
+    
+    /*
+    Anything within the innerDistance directly moves the mesh nodes as a rigid body.
+    Between the innerDistance and outerDistance, the mesh nodes are morphed.
+    Outside the outerDistance, no morphing occurs.
+    */
+
+    mass            22.9;
+    centreOfMass    (0.4974612746 -0.01671895744 0.125);
+    momentOfInertia (1.958864357 3.920839234 2.057121362);
+
+    /*
+    OBSERVACION #1: Esto implica que tanto el centro de masa y el momento de inercia es un tensor simetrico en dos dimensiones.
+    */
+
+    /*
+    This defines the mass properties of the 6DoF Body. 
+    The mass applies to the entire body.
+    The centreOfMass defines the centroid of the body.
+    The momentOfInertia defines the moment of the inertia of the body.
+    */
+    
+    orientation
+    (   
+        0.9953705935 0.09611129781 0
+        -0.09611129781 0.9953705935 0
+        0 0 1
+    );
+
+    angularMomentum (0 0 -2);
+    g               (0 -9.81 0);
+    rho             rhoInf;
+    rhoInf          1;
+    report          on;
+
+    solver
+    {
+        type symplectic;
+    }
+
+ 
+
+    constraints
+    {
+
+        /*
+        The line constraint is similar to the axis constraint, but the line constraint focuses on linear motion. Rotational motion is unconstrained. The line constraint only permits linear motion along the 
+        vector defined by the direction keyword. This limits body motions to only one degree of freedom in linear motion plus 3 degrees of freedom in rotational motion. The direction is defined based on a 
+        vector line. OpenFOAM automatically rescales the direction definition to interpret it as a unit vector definition
+        */
+        yLine
+        {
+            sixDoFRigidBodyMotionConstraint line;
+            centreOfRotation    (0.25 0.007 0.125);
+            direction           (0 1 0);
+        }
+
+        /*
+        The axis constraint only constrains rotational motion. Linear motion is unconstrained. The axis constraint only permits rotation about the defined axis of rotation. This limits body motions to only
+        one degree of freedom in rotation plus 3 degrees of freedom in linear motion. The axis is defined based on a vector orientation. OpenFOAM will automatically rescale the axis definition to interpret it
+        as a unit vector definition.
+        */  
+        zAxis
+        {
+            sixDoFRigidBodyMotionConstraint axis;
+            axis                (0 0 1);
+        }
+    }
+
+    restraints
+    {
+        verticalSpring
+        {
+            sixDoFRigidBodyMotionRestraint linearSpring;
+
+            anchor          (0.25 0.007 0.125);
+            refAttachmentPt (0.25 0.007 0.125);
+            stiffness       4000;
+            damping         2;
+            restLength      0;
+        }
+
+        axialSpring
+        {
+            sixDoFRigidBodyMotionRestraint linearAxialAngularSpring;
+
+            axis            (0 0 1);
+            stiffness       700;
+            damping         0.5;
+            referenceOrientation $orientation;
+        }
+    }
+}
+
+// ************************************************************************* //

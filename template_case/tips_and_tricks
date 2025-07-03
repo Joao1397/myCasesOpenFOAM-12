@@ -1,0 +1,4 @@
+/*
+sed -i -e 's/\r$//' scriptname.sh
+Este comando permite eliminar cualquier caracter no deseado de windows para que pueda ser ejectuado en linux #!/bin/bash
+*/

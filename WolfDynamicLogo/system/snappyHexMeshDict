@@ -1,0 +1,194 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Which of the steps to run
+castellatedMesh true;
+snap            true;
+addLayers       true; 
+
+geometry // Definition of geometry entities to be used for meshing
+{
+    wolf // Name of the surface inside snappyHexMesh
+    {
+        type triSurfaceMesh;
+        // type distributedTriSurfaceMesh; // Might give an improvement in parallel simulation.
+        file "wolfExtruded.stl"; // STL/OBJ file to read
+        regions // Use this option if you have an STL with multiple patches defined
+        {
+            wolflocal // This is the name of the region or surface patch in the STL
+            {
+                  name wolf_wall; // User-defined patch name. This is the final name of the patch
+            } 
+        }
+    }
+
+    box // Name of geometrical entity
+    {
+        type searchableBox;
+        min (-100.0 -120.0 -50.0);
+        max (100.0 120.0 150.0);
+    }
+};
+
+castellatedMeshControls // Definition of feature, surface and volume mesh refinement
+{
+    // Refinement parameters
+    maxLocalCells 100000;
+    maxGlobalCells 2000000; // Maximum number of cells in the domain
+    minRefinementCells 0; // 10; improved
+    maxLoadUnbalance 0.10;
+    nCellsBetweenLevels 3; // This parameter controls the transition between cell refinement levels.
+
+    // Local curvature and feature angle refinement
+    resolveFeatureAngle 30; // Controls the local curvature refinement. Want to resolve more feature, simply reduce this value
+    planarAngle 30; // // As low as possible
+    allowFreeStandingZoneFaces true;
+
+    // Explicit feature edge refinement
+    features
+    (
+        {
+            file "wolfExtruded.eMesh"; // This file is automatically created when you use the utility surfaceFeatures
+            level 2; // This equivalent to levels ((0 2));
+            // levels ((2 2));	//This choice improves Boundary Layer
+        }
+    );
+
+    // Surface based refinement
+    refinementSurfaces
+    {
+        // This was defined in the geometry section
+        wolf
+        {
+            level (1 1); // (2 4) // Global Refinement
+
+            // Optional region-wise level specification
+            regions // The regions were defined in the geometry section
+            {
+                wolflocal 
+                {
+                    level (2 4); // Local refinement
+                    patchInfo
+            		{
+                		type wall; // You can only define patches of type wall or patch.
+                    } 
+                }
+            }
+        }
+    }
+
+    // Region-wise refinement
+    refinementRegions
+    {
+        box // This was defined in the geometry section
+        {
+            mode inside;
+            level  1; // In this case is equivalent to levels ((0 1));
+        }
+    }
+
+    // Mesh Selection
+    insidePoint (-100.0 0.0 50.0 ); // This point defines where is located the mesh.
+}
+
+// Settings for the snapping.
+snapControls
+{
+    nSmoothPatch 3; // 3 - 10// Number of patch smoothing iterations before finding correspondence to surface
+    tolerance 2.0; // 0.5 - 2.0
+    nSolveIter 30; // 30 - 100 // Number of mesh displacement relaxation iterations. The higher the value the better the body fitted mesh.
+    nRelaxIter 5; // 5 - 50 // Maximum number of snapping relaxation iterations. Should stop before upon reaching a correct mesh.
+                                    // Increase this value to improve the quality of the body fitted mesh.
+
+    // Feature snapping
+    nFeatureSnapIter 10; // 10 - 100 // Number of feature edge snapping iterations. Increase this value to improve the quality of the edge features.
+    implicitFeatureSnap false; // Detect (geometric only) features by sampling the surface (default=false).
+    explicitFeatureSnap true; // // Use castellatedMeshControls::features (default = true)
+    multiRegionFeatureSnap false;
+}
+
+// Settings for the layer addition.
+addLayersControls
+{
+    //Global parameters
+    relativeSizes true;
+    expansionRatio 1.2;
+    finalLayerThickness 0.5;
+    minThickness 0.001; // 0.01 - 0.001
+
+    // Layer thickness specification. This can be specified in one of following
+    // ways:
+    // - expansionRatio and finalLayerThickness (cell nearest internal mesh)
+    // - expansionRatio and firstLayerThickness (cell on surface)
+    // - overall thickness and firstLayerThickness
+    // - overall thickness and finalLayerThickness
+    // - overall thickness and expansionRatio
+
+    layers // Select the patches where we want to add the layers
+    {
+        wolf_wall // This patch was created in the geometry section.
+        {
+            nSurfaceLayers 3;
+            // Local parameters
+            // expansionRatio 1.3;
+            // finalLayerThickness 0.3;
+            // minThickness 0.1;
+        }
+    }
+
+    // Advanced settings
+    nGrow 0;
+    featureAngle 130; // 60 - 270
+    maxFaceThicknessRatio 0.5; // 1.0 max
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals 3;    
+    nSmoothThickness 10;
+    minMedialAxisAngle 90;
+    nMedialAxisIter 10;
+    maxThicknessToMedialRatio 0.3; // 0.3 - 0.6
+    slipFeatureAngle 30;
+    nBufferCellsNoExtrude 0;
+    nLayerIter 50; // 50 - 200
+    nRelaxedIter 20;
+    nRelaxIter 5;
+}
+
+// Setting mesh quality settings
+meshQualityControls
+{
+    #include "meshQualityDict"
+}
+
+/*
+debugFlags
+(
+    mesh            // write intermediate meshes
+    intersections   // write current mesh intersections as .obj files
+    featureSeeds    // write information about explicit feature edge refinement
+    attraction      // write attraction as .obj files
+    layerInfo       // write information about layers
+);
+*/
+
+writeFlags
+(
+    scalarLevels    // write volScalarField with cellLevel for postprocessing
+    layerSets       // write cellSets, faceSets of faces in layer
+    layerFields     // write volScalarField for layer coverage
+);
+
+mergeTolerance 1e-6;
+
+// ************************************************************************* //

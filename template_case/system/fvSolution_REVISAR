@@ -1,0 +1,111 @@
+
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    // GAMG is the best choice for symmetric matrices.
+    // GAMG converges in less than 100 iterations.
+    // If GAMG does not converge, try PCG.
+    // The PBiCGStab with DILU precoding is the best choice for asymmetric matrices.
+
+    p
+    {
+        solver          GAMG;
+        tolerance       1e-06;
+        relTol          0.01;
+        smoother        GaussSeidel;
+        nPreSweeps      0;
+        nPostSweeps     2;
+        cacheAgglomeration on;
+        agglomerator    faceAreaPair;
+        nCellsInCoarsestLevel 100;
+        mergeLevels     1;
+        minIter         3;
+        maxIter         100;
+    }
+
+    pFinal
+    {
+        $p;
+        tolerance       1e-08;
+        relTol          0.0;
+    }
+
+    "(U|k|epsilon)"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-08;
+        relTol          0.0;
+        minIter         3;
+    }
+}
+
+SIMPLE
+{
+    nNonOrthogonalCorrectors 2;
+    nUCorrectors    2;
+    pRefCell        0;
+    pRefValue       0;
+    consistent      yes; // SIMPLEC
+
+    residualControl
+    {
+        p               1e-4;
+        U               1e-4;
+        k               1e-4;
+        epsilon         1e-4;
+    }
+}
+
+PISO
+{
+    nCorrectors     2;
+    nNonOrthogonalCorrectors 1;
+}
+
+relaxationFactors // SIMPLE
+{
+    fields
+    {
+        p               0.3;
+    }
+    
+    equations
+    {
+        U               0.7;
+        k               0.7;
+        epsilon         0.7;
+    }
+}
+
+relaxationFactors // SIMPLEC
+{
+    fields
+    {
+        p               0.7;
+    }
+    
+    equations
+    {
+        U               0.7;
+        k               0.7;
+        epsilon         0.7;
+    }
+}
+
+// ************************************************************************* //

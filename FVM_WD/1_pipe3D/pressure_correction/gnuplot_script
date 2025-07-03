@@ -1,0 +1,56 @@
+set terminal qt 0
+
+set title 'incompressibleFluid relative pressure - STEP 1'
+
+set xlabel 'Axial distance'
+set ylabel 'Relative pressure (Pa)' 
+
+set xtics 0,0.1,1.
+set grid
+
+plot [][] \
+'incompressible/postProcessing/sampleDict/0.2/s1.xy' u 1:($5) w l title 'incompressibleFluid - relative pressure'
+
+
+
+set terminal qt 1
+
+set title 'incompressibleFluid vs fluid (compressible) - STEP 2' 
+
+set xlabel 'Axial distance'
+set ylabel 'Absolute pressure (Pa)' 
+
+set xtics 0,0.1,1.
+set grid
+
+plot [][] \
+'incompressible/postProcessing/sampleDict/0.2/s1.xy' u 1:($5+101325) w l title 'incompressibleFluid - absolute pressure (no density correction)',\
+'compressible/postProcessing/sampleDict/0.2/s1.xy' u 1:5 w l title 'fluid (compressible) - absolute pressure'
+
+
+set terminal qt 2
+
+set title 'incompressibleFluid vs fluid (compressible) - STEP 3' 
+
+set xlabel 'Axial distance'
+set ylabel 'Absolute pressure (Pa)' 
+
+set xtics 0,0.1,1.
+set grid
+
+plot [][] \
+'incompressible/postProcessing/sampleDict/0.2/s1.xy' u 1:(1.177*$5+101325) w l title 'incompressibleFluid - absolute pressure (with density correction)',\
+'compressible/postProcessing/sampleDict/0.2/s1.xy' u 1:5 w l title 'fluid (compressible) - absolute pressure' 
+
+
+
+
+
+pause -1
+
+#    EOF
+
+
+
+
+

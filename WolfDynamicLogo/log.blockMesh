@@ -1,0 +1,130 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : blockMesh
+Date   : Jun 01 2025
+Time   : 20:14:14
+Host   : "ElMakinon"
+PID    : 8855
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "blockMeshDict"
+
+Creating block mesh from
+    "system/blockMeshDict"
+Expanding #calc at line 30 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_52973a36dac651f5489a4f08d0092101b1af6c67/platforms/linux64GccDPInt32Opt/lib/libcodeStream_52973a36dac651f5489a4f08d0092101b1af6c67.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_52973a36dac651f5489a4f08d0092101b1af6c67/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_52973a36dac651f5489a4f08d0092101b1af6c67"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_52973a36dac651f5489a4f08d0092101b1af6c67
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_52973a36dac651f5489a4f08d0092101b1af6c67/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_52973a36dac651f5489a4f08d0092101b1af6c67.so
+Expanding #calc at line 31 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_2805f817587a49565763b0c218f3d4672532c229/platforms/linux64GccDPInt32Opt/lib/libcodeStream_2805f817587a49565763b0c218f3d4672532c229.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_2805f817587a49565763b0c218f3d4672532c229/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_2805f817587a49565763b0c218f3d4672532c229"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_2805f817587a49565763b0c218f3d4672532c229
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_2805f817587a49565763b0c218f3d4672532c229/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_2805f817587a49565763b0c218f3d4672532c229.so
+Expanding #calc at line 32 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_f1ee32cda1e7c26943022fe1985c3665aad1bb50/platforms/linux64GccDPInt32Opt/lib/libcodeStream_f1ee32cda1e7c26943022fe1985c3665aad1bb50.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_f1ee32cda1e7c26943022fe1985c3665aad1bb50/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_f1ee32cda1e7c26943022fe1985c3665aad1bb50"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_f1ee32cda1e7c26943022fe1985c3665aad1bb50
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_f1ee32cda1e7c26943022fe1985c3665aad1bb50/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_f1ee32cda1e7c26943022fe1985c3665aad1bb50.so
+Expanding #calc at line 34 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_c58582aa983b74fc92ac1b5411b4dc2fc5d68476/platforms/linux64GccDPInt32Opt/lib/libcodeStream_c58582aa983b74fc92ac1b5411b4dc2fc5d68476.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_c58582aa983b74fc92ac1b5411b4dc2fc5d68476/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_c58582aa983b74fc92ac1b5411b4dc2fc5d68476"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_c58582aa983b74fc92ac1b5411b4dc2fc5d68476
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_c58582aa983b74fc92ac1b5411b4dc2fc5d68476/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_c58582aa983b74fc92ac1b5411b4dc2fc5d68476.so
+Expanding #calc at line 35 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_617e0038dd5e797b95134e94468def9e3d1416c8/platforms/linux64GccDPInt32Opt/lib/libcodeStream_617e0038dd5e797b95134e94468def9e3d1416c8.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_617e0038dd5e797b95134e94468def9e3d1416c8/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_617e0038dd5e797b95134e94468def9e3d1416c8"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_617e0038dd5e797b95134e94468def9e3d1416c8
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_617e0038dd5e797b95134e94468def9e3d1416c8/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_617e0038dd5e797b95134e94468def9e3d1416c8.so
+Expanding #calc at line 36 in file "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/system/blockMeshDict"
+Creating new library in "dynamicCode/_aa79261ff555082fc4495e033d961383b85e84e0/platforms/linux64GccDPInt32Opt/lib/libcodeStream_aa79261ff555082fc4495e033d961383b85e84e0.so"
+"/home/cfd/OpenFOAM/OpenFOAM-12/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_aa79261ff555082fc4495e033d961383b85e84e0/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_aa79261ff555082fc4495e033d961383b85e84e0"
+wmake libso /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_aa79261ff555082fc4495e033d961383b85e84e0
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/dynamicCode/_aa79261ff555082fc4495e033d961383b85e84e0/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_aa79261ff555082fc4495e033d961383b85e84e0.so
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 20
+        j : 20
+        k : 15
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-200 -200 -100) (200 200 200)
+  nPoints: 9261
+  nCells: 8000
+  nFaces: 25200
+  nInternalFaces: 22800
+----------------
+Patches
+----------------
+  patch 0 (start: 22800 size: 400) name: minX
+  patch 1 (start: 23200 size: 400) name: maxX
+  patch 2 (start: 23600 size: 400) name: minY
+  patch 3 (start: 24000 size: 400) name: maxY
+  patch 4 (start: 24400 size: 400) name: minZ
+  patch 5 (start: 24800 size: 400) name: maxZ
+
+End
+

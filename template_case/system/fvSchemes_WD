@@ -1,0 +1,268 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/* 
+To keep time diffusion to a minimum, use a CFL number
+less than 2, and preferably below 1.
+*/
+
+/*
+For gradient discretization the leastSquares method is
+more accurate. But we have found that it is a little bit
+oscillatory in tetrahedral meshes.
+*/
+
+/**************************************************************/
+
+/* RECOMMENDED FOR MOST SIMULATIONS */
+
+ddtSchemes
+{
+    default         CrankNicolson 0; // 0.0 - 0.333 - 1.0;
+    /* default         Euler; */
+}
+
+gradSchemes
+{
+    default             cellLimited Gauss linear 1.0;
+    /* default          cellLimited leastSquares 1.0; */
+    grad(p)             cellLimited Gauss linear 0.5;
+    /* grad(p)             cellLimited Gauss linear 1.0; */
+}
+
+divSchemes 
+{
+    default         none;
+    div(phi,U)      Gauss linearUpwindV default;
+    /* div(phi,U)      Gauss linearUpwind default; */
+    
+    div(phi,k)      Gauss linearUpwind default;
+    div(phi, omega) Gauss linearUpwind default;
+    div(phi,epsilon) Gauss linearUpwind default;
+    /*
+    div(phi,k)      Gauss upwind default;
+    div(phi, omega) Gauss upwind default;
+    div(phi,epsilon) Gauss upwind default;
+    */
+
+    div((nuEff*dev(T(grad(U)))))   Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 1.0;
+    /* default         Gauss linear limited 0.5; */
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 1.0;
+    /* default         limited 0.5; */
+}
+
+/**************************************************************/
+
+/* LES SIMULATIONS OR LAMINAR FLOWS WITHOUT COMPLEX PHYSICS
+A VERY ACCURATE BUT OSCILLATORY SCHEME
+
+ddtSchemes
+{
+    default         backward;
+}
+
+gradSchemes
+{
+    default             leastSquares;
+}
+
+divSchemes 
+{
+    default         none;
+    div(phi, U)      Gauss linear;
+    div(phi, k)      Gauss linear;
+    div(phi, omega) Gauss linear;
+    div(phi, epsilon) Gauss linear;
+    div((nuEff*dev(T(grad(U)))))   Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 1.0;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 1.0;
+}
+
+*/
+
+/**************************************************************/
+
+/* ACCURATE BUT MORE STABLE (DIFFUSIVE)
+
+ddtSchemes
+{
+    default         CrankNicolson 0.7;
+}
+
+gradSchemes
+{
+    default             cellMDLimited Gauss linear 0.5;
+}
+
+divSchemes 
+{
+    default         none;
+    div(phi, U)      Gauss limitedLinear 1.0;
+    div(phi, k)      Gauss limitedLinear 1.0;
+    div(phi, omega) Gauss limitedLinear 1.0;
+    div(phi, epsilon) Gauss limitedLinear 1.0;
+    div((nuEff*dev(T(grad(U)))))   Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 1.0;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 1.0;
+}
+
+*/
+
+/**************************************************************/
+
+/* ACCURATE BUT MORE MORE DIFFUSIVE 
+
+ddtSchemes
+{
+    default         CrankNicolson 0.333;
+}
+
+gradSchemes
+{
+    default             cellLimited Gauss linear 1.0;
+    grad(p)             cellLimited Gauss linear 0.333;
+}
+
+divSchemes 
+{
+    default         none;
+    div(phi, U)      Gauss linearUpwindV default;
+    div(phi, k)      Gauss linearUpwind default;
+    div(phi, omega) Gauss linearUpwind default;
+    div(phi, epsilon) Gauss linearUpwind default;
+    div((nuEff*dev(T(grad(U)))))   Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 1.0;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 1.0;
+}
+
+*/
+
+/**************************************************************/
+
+/*
+You can use this method for troubleshooting. If the solution
+diverges, you better check boundary conditions, physical
+properties, and so on.
+*/
+
+/* VERY STABLE BUT TOO MUCH DIFFUSIVE
+
+ddtSchemes
+{
+    default         Euler;
+}
+
+gradSchemes
+{
+    default             cellLimited Gauss linear 1.0;
+}
+
+divSchemes 
+{
+    default         none;
+    div(phi, U)      Gauss upwind;
+    div(phi, k)      Gauss upwind;
+    div(phi, omega) Gauss upwind;
+    div(phi, epsilon) Gauss upwind;
+    div((nuEff*dev(T(grad(U)))))   Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 0.5;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 0.5;
+}
+
+*/
+
+/**************************************************************/
+
+// PSEUDO TRANSIENT SIMULATIONS
+
+/*
+
+ddtSchemes
+{
+    default         localEuler; // SLTS // CoEuler
+}
+
+*/
+
+
+
+

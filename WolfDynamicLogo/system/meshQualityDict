@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      meshQualityDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+maxNonOrtho 75; // Maximum non-orthogonality angle
+maxBoundarySkewness 20;
+maxInternalSkewness 4; // Maximum skewness angle
+maxConcave 80;
+minVol 1e-13;
+minTetQuality -1e+30; // 1e-15;
+minTwist 0.02;
+minDeterminant 0.001;
+minFaceWeight 0.05;
+minVolRatio 0.01;
+nSmoothScale 4;
+errorReduction 0.75;
+minArea -1;
+minTriangleTwist -1;
+minFlatness 0.5;
+
+// ************************************************************************* //

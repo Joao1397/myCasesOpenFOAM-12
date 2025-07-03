@@ -1,0 +1,119 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : surfaceFeatures
+Date   : Jun 01 2025
+Time   : 20:14:25
+Host   : "ElMakinon"
+PID    : 9980
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "surfaceFeaturesDict"
+
+Surface            : "wolfExtruded.stl"
+
+
+Feature line extraction is only valid on closed manifold surfaces.
+Statistics:
+Triangles    : 388
+Vertices     : 196
+Bounding Box : (-76.353752 -87.765228 0) (65.443153 87.18663 100)
+
+
+Constructing feature set from included angle 2.6179939
+Selecting edges purely based on geometric tests: no
+Removing all non-manifold edges (edges with > 2 connected faces) unless they cross multiple regions
+
+Initial feature set:
+    feature points : 6
+    feature edges  : 199
+    of which
+        region edges   : 0
+        external edges : 198
+        internal edges : 1
+
+
+Final feature set:
+points      : 196
+edges       : 199
+boundingBox : (-76.353752 -87.765228 0) (65.443153 87.18663 100)
+point classification :
+    convex feature points          :        4
+    concave feature points         :        0
+    mixed feature points           :        2
+    other (non-feature) points     :      190
+edge classification :
+    external (convex angle) edges  :      198
+    internal (concave angle) edges :        1
+    flat region edges              :        0
+    open edges                     :        0
+    multiply connected edges       :        0
+
+Writing extendedFeatureEdgeMesh to "constant/extendedFeatureEdgeMesh/wolfExtruded.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/constant/extendedFeatureEdgeMesh/wolfExtruded"
+
+Writing featureEdgeMesh to "constant/triSurface/wolfExtruded.eMesh"
+
+Surface            : "selection1.stl"
+
+
+Feature line extraction is only valid on closed manifold surfaces.
+Statistics:
+Triangles    : 339
+Vertices     : 194
+Bounding Box : (-24.188101 -87.765198 91.249901) (-7.93783 -77.023903 100)
+
+
+Constructing feature set from included angle 2.6179939
+Selecting edges purely based on geometric tests: no
+Removing all non-manifold edges (edges with > 2 connected faces) unless they cross multiple regions
+
+Initial feature set:
+    feature points : 25
+    feature edges  : 86
+    of which
+        region edges   : 49
+        external edges : 1
+        internal edges : 36
+
+
+Final feature set:
+points      : 81
+edges       : 86
+boundingBox : (-24.188101 -87.765198 91.249901) (-7.93783 -77.023903 100)
+point classification :
+    convex feature points          :        0
+    concave feature points         :        1
+    mixed feature points           :       24
+    other (non-feature) points     :       56
+edge classification :
+    external (convex angle) edges  :        1
+    internal (concave angle) edges :       36
+    flat region edges              :        0
+    open edges                     :       49
+    multiply connected edges       :        0
+
+Writing extendedFeatureEdgeMesh to "constant/extendedFeatureEdgeMesh/selection1.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/home/cfd/OpenFOAM/cfd-12/WolfDynamicLogo/constant/extendedFeatureEdgeMesh/selection1"
+
+Writing featureEdgeMesh to "constant/triSurface/selection1.eMesh"
+
+ExecutionTime = 0.009471 s  ClockTime = 0 s
+
+End
+

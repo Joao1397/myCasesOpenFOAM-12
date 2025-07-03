@@ -1,0 +1,239 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |               
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10                                      
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     foamRun;
+
+solver          fluid;
+
+//startFrom       latestTime;
+startFrom       startTime;
+
+startTime       0.0;
+
+stopAt          endTime;
+
+endTime         0.2;
+
+//deltaT          1.0e-4;       //To start with addaptive time stepping
+deltaT          5.0e-4;     //Stable with nCorrectors 2;
+//deltaT          1.0e-3;       //Stable with nCorrectors 2 nut not accurate
+
+//writeControl    adjustableRunTime;
+writeControl    runTime;
+
+writeInterval   0.005;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  no;
+
+maxCo           1;
+maxDeltaT       0.01;
+
+// ************************************************************************* //
+
+functions
+{
+
+///////////////////////////////////////////////////////////////////////////
+
+minmaxdomain_scalar
+{
+    type            volFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+
+    enabled         true;   //true or false
+    log             true;   //write to screen
+    
+    //writeControl    writeTime;
+    writeControl    timeStep;
+    writeInterval   1;
+
+    writeFields     false;  //write solution to field value - Not needed when only reporting value to screen
+
+    writeLocation   true;   //write location in the output file
+
+    //mode component;
+
+    select      all;
+
+    operation       none;
+
+    fields
+    (
+        p T rho
+    );
+}
+
+minmaxdomain_vector
+{
+    type            volFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+
+    enabled         true;   //true or false
+    log             true;   //write to screen
+    
+    //writeControl    writeTime;
+    writeControl    timeStep;
+    writeInterval   1;
+
+    writeFields     false;  //write solution to field value - Not needed when only reporting value to screen
+
+    writeLocation   true;   //write location in the output file
+
+    //mode component;
+
+    select      all;
+
+    operation       none;
+
+    fields
+    (
+        U
+    );
+}
+
+mindomain_scalar
+{
+    $minmaxdomain_scalar
+    operation       min;
+}
+
+mindomain_vector
+{
+    $minmaxdomain_vector
+    operation       minMag;
+}
+
+maxdomain_scalar
+{
+    $minmaxdomain_scalar
+    operation       max;
+}
+
+maxdomain_vector
+{
+    $minmaxdomain_vector
+    operation       maxMag;
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+    inMassFlow
+    {
+        type            surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+
+        //writeControl     outputTime;
+        writeControl   timeStep;
+        writeInterval  1;
+
+        log             true;
+
+        writeFields     false;
+
+        select          patch;
+        name      inlet;
+
+        operation       sum;
+        fields
+        (
+            phi
+        );
+    }
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+    outMassFlow
+    {
+        type            surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        enabled         true;
+
+        //writeControl     outputTime;
+
+        writeControl   timeStep;
+        writeInterval  1;
+
+        log             yes;
+
+        writeFields     false;
+
+        //writeFields     true;
+        //surfaceFormat   raw;
+
+        select          patch;
+        name      outlet;
+
+        operation       sum;
+        fields
+        (
+            phi
+        );
+    }
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+//Saves yplus field at the given interval
+
+    yplus_field
+    {
+        type yPlus;
+        libs ("libutilityFunctionObjects.so");
+
+        enabled true;
+        //log false;
+
+        writeControl outputTime;
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+//Print y+ stats every iteration without saving the field
+
+    yplus_stats
+    {
+        type yPlus;
+        libs ("libutilityFunctionObjects.so");
+
+        enabled true;
+
+        writeControl timeStep;
+        writeInterval 1;
+
+//Leave object empty to not save the field
+//This will only print the yplus values every timestep and will not save the field
+        objects ();
+        log true;
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
+}

@@ -1,0 +1,128 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// OBSERVACION: EN LA PARTE DEL POST PROCESSING, ES IMPORTANTE DEFINIR COMO SE DEBEN CALCULAR LAS OPERACIONES QUE DEBAMOS REQUERIR.
+
+ddtSchemes
+{
+    default         backward;
+
+    /*
+    default         backward;
+    default         CrankNicolson 0.9;
+    default         CrankNicolson 0.7 - 0.9;
+    default         Euler;
+    default         localEuler;
+    default         none;
+    default         steadyState;
+    */
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+
+    /*
+    default         Gauss <interpolation scheme>
+
+    default         filmGauss linear;
+    default         Gauss cubic; // third-order scheme
+    default         Gauss linear;
+    default         leastSquares; // second-order scheme
+    default         none;
+
+    grad(p)         Gauss linear;
+    grad(T)         Gauss linear;
+    grad(U)         Gauss linear;
+    
+    grad(epsilon)   cellLimited Gauss linear 1;
+    grad(k)         cellLimited Gauss linear 1;
+    grad(nuTilda)   cellLimited Gauss linear 1;
+    grad(omega)     cellLimited Gauss linear 1;
+
+    grad(U)         cellLimited Gauss linear 1;
+    */
+
+    /*
+    Observacion #1: Presion y Temperatura van con Gauss linear
+    Observacion #2: Acaso la viscosidad turbulenta del modelo RANS no deberia tener una linea asi como la tiene para LES?
+    Observacion #3: Solo los modelos k-epsilon y k-omega estan en los tutoriales.
+    Observacion #4: ESTO SOLO VIENE DE LOS TUTORIALES. NO NECESARIAMENTE ES LO QUE DEBE SER.
+    Observacion #5: Que pasa en el caso de una simulacion compresible? No hay terminos de gradiente para la densidad? 
+    Observacion #6: Que pasa con el gradiente de la velocidad? No deberia tener un gradiente?
+    Observacion #7: Es poco comun usar el cellLimited en el caso de las cantidades de turbulencia, pero no es imposible.
+    Observacion #8: They use the cellLimited scheme which limits the gradient such that when cell values are extrapolated to faces using the calculated gradient, the face values do not fall outside the bounds of values in surrounding cells. 1 is invariably used.
+    */
+}
+
+divSchemes
+{
+    /*
+    Consultar excel para tomar la decision de que scheme usar.
+    */
+
+    /*
+    Observacion #1: La practica recomendada es usar el "none" como default.
+    Observacion #2: The non-advective terms then generally use the Gauss integration with linear interpolation.
+    div(U)         Gauss linear
+    Observacion #3: The keyword identiﬁer for the advective terms are usually of the form div(phi,field), where phi denotes the (volumetric) ﬂux of velocity on the cell faces for constant-density ﬂows and the mass ﬂux for compressible ﬂows.
+    Observacion #4:
+    linear: second order, unbounded.
+    linearUpwind: second order, upwind-biased, unbounded (but much less so than linear), that requires discretisation of the velocity gradient to be speciﬁed.
+    LUST: blended 75% linear/ 25%linearUpwind scheme, that requires discretisation of the velocity gradient to be speciﬁed.
+    limitedLinear: linear scheme that limits towards upwind in regions of rapidly changing gradient; requires a coeﬃcient, where 1 is strongest limiting, tending towards linear as the coeﬃcient tends to 0.
+    upwind: ﬁrst-order bounded, generally too inaccurate for velocity but more often used for transport of scalar ﬁelds.
+    Observacion #5: ‘V’-schemes are specialised versions of schemes designed for vector ﬁelds. They diﬀer from conventional schemes by calculating a single limiter which is applied to all components of the vectors, rather than calculating separate limiters for each component of the vector. The ‘V’-schemes’ single limiter is calculated based on the direction of most rapidly changing gradient, resulting in the strongest limiter being calculated which is most stable but arguably less accurate
+    Observacion #6: The bounded variants of schemes relate to the treatment of the material time derivative which can be expressed in terms of a spatial time derivative and convection
+    Observacion #7: The bounded variant of the Gauss scheme provides this, automatically including the discretisation of the third-term with the advection term.
+    Observacion #8: U div(phi) = div(phi U) - phi div(U).
+    */
+}
+
+laplacianSchemes
+{
+    /*
+    default         Gauss <interpolationScheme> <snGradScheme>
+    
+    bounded         Gauss linear uncorrected;
+    default         Gauss linear corrected;
+    default         Gauss linear limited corrected 0.33;
+    default         Gauss linear limited corrected 0.5;
+    default         Gauss linear orthogonal;
+    default         none;
+    laplacian(diffusivity,cellMotionU) Gauss linear uncorrected;
+    laplacian(DT,T) Gauss linear corrected;
+    laplacian(DV,V) Gauss linear corrected;
+    laplacian(phi)  Gauss linear corrected;
+    */
+}	
+
+snGradSchemes
+{
+    /*
+    bounded         uncorrected;
+    default         corrected;
+    default         limited corrected 0.33;
+    default         limited corrected 0.5;
+    default         none;
+    default         orthogonal;
+    default         uncorrected;
+    */
+
+    /*
+    Observacion 1: Typically, is chosen to be 0.33 or 0.5, where 0.33 oﬀers greater stability and 0.5 greater accuracy..
+    */
+}
