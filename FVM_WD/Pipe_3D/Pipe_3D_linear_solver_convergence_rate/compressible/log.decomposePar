@@ -1,0 +1,129 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : decomposePar -force
+Date   : Jul 05 2025
+Time   : 20:12:49
+Host   : "ElMakinon"
+PID    : 4555
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Removing 0 existing processor directories
+
+Calculating distribution of cells
+
+Selecting decomposer scotch
+
+Finished decomposition in 0.070279 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 3168
+    Number of faces shared with processor 1 = 352
+    Number of faces shared with processor 3 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Processor 1
+    Number of cells = 3168
+    Number of faces shared with processor 0 = 352
+    Number of processor patches = 1
+    Number of processor faces = 352
+    Number of boundary faces = 640
+
+Processor 2
+    Number of cells = 3168
+    Number of faces shared with processor 3 = 352
+    Number of faces shared with processor 5 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Processor 3
+    Number of cells = 3168
+    Number of faces shared with processor 0 = 352
+    Number of faces shared with processor 2 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Processor 4
+    Number of cells = 3168
+    Number of faces shared with processor 5 = 352
+    Number of faces shared with processor 7 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Processor 5
+    Number of cells = 3168
+    Number of faces shared with processor 2 = 352
+    Number of faces shared with processor 4 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Processor 6
+    Number of cells = 3168
+    Number of faces shared with processor 7 = 352
+    Number of processor patches = 1
+    Number of processor faces = 352
+    Number of boundary faces = 640
+
+Processor 7
+    Number of cells = 3168
+    Number of faces shared with processor 4 = 352
+    Number of faces shared with processor 6 = 352
+    Number of processor patches = 2
+    Number of processor faces = 704
+    Number of boundary faces = 288
+
+Number of processor faces = 2464
+Max number of cells = 3168 (0% above average 3168)
+Max number of processor patches = 2 (14.2857142857% above average 1.75)
+Max number of faces between processors = 704 (14.2857142857% above average 616)
+
+Time = 0s
+
+Decomposing FV fields
+
+    Decomposing volScalarFields
+
+        p
+        T
+        yPlus
+
+    Decomposing volVectorFields
+
+        vorticity
+        U
+
+Decomposing point fields
+
+    (no point fields)
+
+End
+

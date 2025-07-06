@@ -1,0 +1,1051 @@
+--------------------------------------------------------------------------
+[[22736,1],3]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ElMakinon
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : foamRun -parallel
+Date   : Jul 05 2025
+Time   : 20:12:51
+Host   : "ElMakinon"
+PID    : 4595
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
+nProcs : 8
+Slaves : 
+7
+(
+"ElMakinon.4596"
+"ElMakinon.4597"
+"ElMakinon.4598"
+"ElMakinon.4599"
+"ElMakinon.4600"
+"ElMakinon.4601"
+"ElMakinon.4602"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting solver fluid
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+No MRF models present
+
+Courant Number mean: 0 max: 0
+Selecting thermophysical transport type laminar
+Selecting default laminar thermophysical transport model unityLewisFourier
+Creating fvConstraints from "system/fvConstraints"
+
+Selecting finite volume constraint type limitPressure
+    Name: limitp
+    min 20265
+    max 506625
+
+Selecting finite volume constraint type limitTemperature
+    Name: limitT
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: No corrector convergence criteria found
+        Calculations will do 2 corrections
+
+
+PIMPLE: Operating solver in transient mode with 2 outer correctors
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+    - selecting all cells
+    - selected 25344 cell(s) with volume 1.51702234403e-06
+
+
+
+Starting time loop
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101325 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+    min() of T = 300 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+    min() of rho = 1.17397474861 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101325 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+    max() of T = 300 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+    max() of rho = 1.17397474861 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 0 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
+
+Courant Number mean: 0 max: 0
+deltaT = 0.000555555555556
+Time = 0.000555556s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.999999911377, Final residual = 1.31509599031e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.999999916276, Final residual = 1.86122316745e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 1, Final residual = 1.52113774624e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.00596950923434, Final residual = 1.95866163278e-09, No Iterations 3
+FDICPCG:  Solving for p, Initial residual = 0.9999999672, Final residual = 0.00729850030096, No Iterations 555
+FDICPCG:  Solving for p, Initial residual = 0.000548985661304, Final residual = 4.63430656652e-06, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 7.76778213032e-05, Final residual = 9.94133843021e-07, No Iterations 14
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.51754568242e-07, global = 5.99864701803e-09, cumulative = 5.99864701803e-09
+FDICPCG:  Solving for p, Initial residual = 0.0232274624563, Final residual = 0.000219774025584, No Iterations 545
+FDICPCG:  Solving for p, Initial residual = 0.000492703969109, Final residual = 3.40731585565e-06, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 6.74576397543e-05, Final residual = 9.64003777378e-07, No Iterations 14
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000276000265562, global = -0.000276000265562, cumulative = -0.000275994266915
+FDICPCG:  Solving for p, Initial residual = 0.00230328989296, Final residual = 2.09040692947e-05, No Iterations 550
+FDICPCG:  Solving for p, Initial residual = 8.05320540838e-05, Final residual = 8.9231393967e-07, No Iterations 15
+FDICPCG:  Solving for p, Initial residual = 1.20416749143e-05, Final residual = 6.73384987422e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000262750556659, global = -0.000262750556659, cumulative = -0.000538744823574
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.177938846865, Final residual = 5.21461811627e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.177956174051, Final residual = 4.16722331634e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.347847912815, Final residual = 4.0166012701e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 1, Final residual = 4.05864695794e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0105484057755, Final residual = 9.83642271381e-05, No Iterations 546
+FDICPCG:  Solving for p, Initial residual = 0.000468836523677, Final residual = 4.50271676641e-06, No Iterations 21
+FDICPCG:  Solving for p, Initial residual = 6.86794995251e-05, Final residual = 8.59242236489e-07, No Iterations 19
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.26462302098e-05, global = 4.26462302098e-05, cumulative = -0.000496098593364
+FDICPCG:  Solving for p, Initial residual = 0.00540350995512, Final residual = 5.15369167521e-05, No Iterations 537
+FDICPCG:  Solving for p, Initial residual = 0.000241790728502, Final residual = 2.34882485258e-06, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 3.64343425946e-05, Final residual = 9.36112865017e-07, No Iterations 5
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 6.12074873596e-05, global = 6.12074873596e-05, cumulative = -0.000434891106005
+FDICPCG:  Solving for p, Initial residual = 0.000419273135223, Final residual = 3.51743658088e-06, No Iterations 544
+FDICPCG:  Solving for p, Initial residual = 1.8592856704e-05, Final residual = 9.67518987164e-07, No Iterations 5
+FDICPCG:  Solving for p, Initial residual = 3.3267910812e-06, Final residual = 9.17701209023e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 6.12905953365e-05, global = 6.12905953365e-05, cumulative = -0.000373600510668
+ExecutionTime = 0.799807 s  ClockTime = 1 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101327.782423 at location (-0.00112275891975 -0.000921183618356 0.2145) in cell 769 on processor 6
+    min() of T = 300.000510629 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
+    min() of rho = 1.17400050266 at location (-0.00050894412389 -0.000631068896714 0.2145) in cell 1583 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.278534936212 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101833.860153 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
+    max() of T = 300.338416115 at location (0.000631068896714 -0.00050894412389 0.0045) in cell 673 on processor 1
+    max() of rho = 1.17949837059 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 1.67390274005 at location (0.00050894412389 0.000631068896714 0.0045) in cell 2199 on processor 1
+
+Courant Number mean: 0.175983345395 max: 0.448570379911
+deltaT = 0.000634920634921
+Time = 0.00119048s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.288740582698, Final residual = 1.86965508867e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.288738757562, Final residual = 2.62680227025e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.635665933367, Final residual = 4.719165457e-10, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.446057729439, Final residual = 1.48045992168e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.080898032333, Final residual = 0.000658296472791, No Iterations 543
+FDICPCG:  Solving for p, Initial residual = 0.000680777701032, Final residual = 6.7351830684e-06, No Iterations 24
+FDICPCG:  Solving for p, Initial residual = 8.61229823578e-05, Final residual = 9.33803790239e-07, No Iterations 29
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.06346840418e-05, global = 4.06344042786e-05, cumulative = -0.00033296610639
+FDICPCG:  Solving for p, Initial residual = 0.00993013887419, Final residual = 8.77129032949e-05, No Iterations 538
+FDICPCG:  Solving for p, Initial residual = 0.000319777020157, Final residual = 2.92558831485e-06, No Iterations 20
+FDICPCG:  Solving for p, Initial residual = 4.5788082528e-05, Final residual = 7.80544652476e-07, No Iterations 14
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 9.03818693535e-05, global = -7.80198671907e-05, cumulative = -0.00041098597358
+FDICPCG:  Solving for p, Initial residual = 0.00231829717266, Final residual = 1.64346845587e-05, No Iterations 543
+FDICPCG:  Solving for p, Initial residual = 6.11950885224e-05, Final residual = 9.00965441935e-07, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 9.10571331012e-06, Final residual = 4.59695425175e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 8.05653896288e-05, global = -7.61749129788e-05, cumulative = -0.000487160886559
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0394040614441, Final residual = 9.36958859462e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0394022714418, Final residual = 7.01535017497e-10, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.156080225124, Final residual = 5.41270132199e-10, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.174951853097, Final residual = 1.30817151576e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00648649706224, Final residual = 5.71091987089e-05, No Iterations 544
+FDICPCG:  Solving for p, Initial residual = 0.000192023328015, Final residual = 1.83905776113e-06, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 2.50439189563e-05, Final residual = 8.09204968571e-07, No Iterations 13
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.48780469814e-05, global = -1.40999247767e-05, cumulative = -0.000501260811336
+FDICPCG:  Solving for p, Initial residual = 0.0027542532338, Final residual = 2.61195354802e-05, No Iterations 536
+FDICPCG:  Solving for p, Initial residual = 6.03664857044e-05, Final residual = 7.86916018971e-07, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 7.85993459679e-06, Final residual = 4.8245294298e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.30526155068e-05, global = 2.30524517187e-05, cumulative = -0.000478208359617
+FDICPCG:  Solving for p, Initial residual = 0.000630680518771, Final residual = 3.19691661494e-06, No Iterations 544
+FDICPCG:  Solving for p, Initial residual = 1.2628280114e-05, Final residual = 9.68784108324e-07, No Iterations 9
+FDICPCG:  Solving for p, Initial residual = 2.32433216951e-06, Final residual = 7.17331970221e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.42225970708e-05, global = 2.42223277175e-05, cumulative = -0.0004539860319
+ExecutionTime = 1.316461 s  ClockTime = 1 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101328.597114 at location (0.000417131993116 0.000521561900657 0.2145) in cell 3116 on processor 6
+    min() of T = 300.000378802 at location (-0.000143951180723 0.00145036143344 0.2145) in cell 2760 on processor 6
+    min() of rho = 1.17401006299 at location (0.00050894412389 0.000631068896714 0.2145) in cell 3081 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.38672455626 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101795.309486 at location (-0.00145036143344 -0.000143951180723 0.0225) in cell 1096 on processor 1
+    max() of T = 300.41111452 at location (0.00050894412389 -0.000631068896714 0.0105) in cell 829 on processor 1
+    max() of rho = 1.1791807644 at location (-0.00145036143344 0.000143951180723 0.0225) in cell 1283 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.28959775708 at location (-0.000631068896714 -0.00050894412389 0.0705) in cell 1179 on processor 3
+
+Courant Number mean: 0.364816311713 max: 0.62882388495
+deltaT = 0.000761904761905
+Time = 0.00195238s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.241794972716, Final residual = 2.12032548319e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.241794490124, Final residual = 3.19250986326e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.446235426769, Final residual = 6.22767965754e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.253309364499, Final residual = 6.08476815976e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0619383574332, Final residual = 0.000610137520042, No Iterations 538
+FDICPCG:  Solving for p, Initial residual = 0.00600209022375, Final residual = 5.02082549402e-05, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 0.000742905373244, Final residual = 6.40935881144e-06, No Iterations 91
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.21219310369e-05, global = -1.36051819813e-05, cumulative = -0.000467591213881
+FDICPCG:  Solving for p, Initial residual = 0.122208466747, Final residual = 0.00115219261251, No Iterations 535
+FDICPCG:  Solving for p, Initial residual = 0.0025466303168, Final residual = 1.82224906147e-05, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 0.000346030162629, Final residual = 3.36920337558e-06, No Iterations 15
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.00030143389373, global = 0.000301411345517, cumulative = -0.000166179868364
+FDICPCG:  Solving for p, Initial residual = 0.043052056624, Final residual = 0.000391406577376, No Iterations 474
+FDICPCG:  Solving for p, Initial residual = 0.000608097219546, Final residual = 4.9966279941e-06, No Iterations 151
+FDICPCG:  Solving for p, Initial residual = 7.83203010826e-05, Final residual = 9.40262964507e-07, No Iterations 84
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000300215749111, global = 0.000300215749111, cumulative = 0.000134035880747
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0636942490886, Final residual = 3.19089548254e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0636976551232, Final residual = 3.67901326552e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0337248034788, Final residual = 2.55771336452e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.435898248963, Final residual = 6.31065570329e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.408020704869, Final residual = 0.00399678635489, No Iterations 541
+FDICPCG:  Solving for p, Initial residual = 0.00160069917973, Final residual = 1.33868676287e-05, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 0.000216021116675, Final residual = 2.08140506733e-06, No Iterations 24
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.31417308012e-05, global = -4.31414537053e-05, cumulative = 9.0894427042e-05
+FDICPCG:  Solving for p, Initial residual = 0.0111978362045, Final residual = 9.63812565327e-05, No Iterations 537
+FDICPCG:  Solving for p, Initial residual = 0.000574797871295, Final residual = 5.08805350916e-06, No Iterations 21
+FDICPCG:  Solving for p, Initial residual = 8.33810205745e-05, Final residual = 9.90646737737e-07, No Iterations 13
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 9.04944223651e-06, global = -3.85302534147e-06, cumulative = 8.70414017005e-05
+FDICPCG:  Solving for p, Initial residual = 0.00331479987603, Final residual = 2.74647755693e-05, No Iterations 530
+FDICPCG:  Solving for p, Initial residual = 9.30076753796e-05, Final residual = 9.94046591565e-07, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 1.34410752126e-05, Final residual = 6.11104686185e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.13589194946e-05, global = -5.6283169691e-06, cumulative = 8.14130847314e-05
+ExecutionTime = 1.848379 s  ClockTime = 2 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101215.301027 at location (7.5e-05 0 0.0105) in cell 1923 on processor 1
+    min() of T = 299.854352775 at location (0.00098619479098 0.000806686425472 0.0015) in cell 1077 on processor 1
+    min() of rho = 1.17229974344 at location (4.79267645815e-05 -0.000635796848411 0.0105) in cell 647 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.128793481665 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101331.362541 at location (-0.000921183618356 0.00112275891975 0.1725) in cell 1287 on processor 7
+    max() of T = 300.105828577 at location (4.79267645815e-05 0.000635796848411 0.0615) in cell 2973 on processor 3
+    max() of rho = 1.17411061204 at location (0.00112275891975 0.000921183618356 0.1605) in cell 2283 on processor 4
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 3.25284446803 at location (-0.00050894412389 0.000631068896714 0.2115) in cell 2937 on processor 6
+
+Courant Number mean: 0.562668455494 max: 0.876249592663
+deltaT = 0.000761904761905
+Time = 0.00271429s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.246193345705, Final residual = 8.98731667393e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.246193351857, Final residual = 1.39094231598e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.178085026394, Final residual = 8.98898813583e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.754817296908, Final residual = 9.92874809638e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.392208022937, Final residual = 0.00388352481252, No Iterations 520
+FDICPCG:  Solving for p, Initial residual = 0.000984280986995, Final residual = 7.82084122479e-06, No Iterations 98
+FDICPCG:  Solving for p, Initial residual = 0.000111772024867, Final residual = 9.20791173929e-07, No Iterations 91
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 8.70932425962e-05, global = -8.70924342257e-05, cumulative = -5.67934949428e-06
+FDICPCG:  Solving for p, Initial residual = 0.00768241317001, Final residual = 6.79853657475e-05, No Iterations 530
+FDICPCG:  Solving for p, Initial residual = 0.000293069882203, Final residual = 2.88328086485e-06, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 4.0379968963e-05, Final residual = 9.28270433122e-07, No Iterations 20
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000247308474501, global = 0.000247308474501, cumulative = 0.000241629125007
+FDICPCG:  Solving for p, Initial residual = 0.0027702520246, Final residual = 2.31202864084e-05, No Iterations 544
+FDICPCG:  Solving for p, Initial residual = 8.65791211991e-05, Final residual = 9.34114731916e-07, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 1.22673317526e-05, Final residual = 5.4770290121e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000233129402562, global = 0.000233129402562, cumulative = 0.000474758527568
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0471862689538, Final residual = 1.91684580529e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0471855429869, Final residual = 2.29209793475e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.128520499885, Final residual = 2.11931151211e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.294535412175, Final residual = 7.87176801148e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00982089496484, Final residual = 7.89431939174e-05, No Iterations 503
+FDICPCG:  Solving for p, Initial residual = 0.000377738047357, Final residual = 3.68424111447e-06, No Iterations 83
+FDICPCG:  Solving for p, Initial residual = 5.06005395681e-05, Final residual = 9.40666275088e-07, No Iterations 127
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.50268999739e-05, global = 1.42379990482e-05, cumulative = 0.000488996526617
+FDICPCG:  Solving for p, Initial residual = 0.00156531741428, Final residual = 1.52972088864e-05, No Iterations 533
+FDICPCG:  Solving for p, Initial residual = 0.000137602347417, Final residual = 1.32021123261e-06, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 1.94205871474e-05, Final residual = 9.12259491707e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.52633533541e-05, global = -3.52633533541e-05, cumulative = 0.000453733173263
+FDICPCG:  Solving for p, Initial residual = 0.000502929725818, Final residual = 3.28819842201e-06, No Iterations 529
+FDICPCG:  Solving for p, Initial residual = 1.15499894635e-05, Final residual = 7.14389869327e-07, No Iterations 12
+FDICPCG:  Solving for p, Initial residual = 1.93707740256e-06, Final residual = 6.72240085433e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.40810621323e-05, global = -3.40810621323e-05, cumulative = 0.00041965211113
+ExecutionTime = 2.366648 s  ClockTime = 2 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 100921.644454 at location (0.00112275891975 -0.000921183618356 0.0585) in cell 138 on processor 3
+    min() of T = 299.678280799 at location (-0.000731612067518 0.000593240863629 0.0015) in cell 1393 on processor 1
+    min() of rho = 1.16961769886 at location (0.00145036143344 0.000143951180723 0.0555) in cell 383 on processor 3
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.000464652811168 at location (-0.00112275891975 -0.000921183618356 0.0945) in cell 272 on processor 2
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101317.998265 at location (0.000921183618356 -0.00112275891975 0.2145) in cell 770 on processor 6
+    max() of T = 299.998116243 at location (-0.00145036143344 0.000143951180723 0.2145) in cell 1479 on processor 6
+    max() of rho = 1.17390941544 at location (0.000806686425472 -0.00098619479098 0.2145) in cell 1069 on processor 6
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 1.99615710918 at location (0.000521561900657 -0.000417131993116 0.0045) in cell 816 on processor 1
+
+Courant Number mean: 0.351096060148 max: 0.88594646813
+deltaT = 0.000761904761905
+Time = 0.00347619s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.252662475805, Final residual = 2.22511979456e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.252662081669, Final residual = 2.88122607784e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.414888945676, Final residual = 4.35800058434e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.226785165019, Final residual = 5.18563880949e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0569216455027, Final residual = 0.000534016599157, No Iterations 536
+FDICPCG:  Solving for p, Initial residual = 0.00945613061709, Final residual = 9.34473031616e-05, No Iterations 62
+FDICPCG:  Solving for p, Initial residual = 0.00107481694294, Final residual = 7.44754687192e-06, No Iterations 65
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.31424401509e-05, global = -6.81402216387e-06, cumulative = 0.000412838088966
+FDICPCG:  Solving for p, Initial residual = 0.0460656000832, Final residual = 0.000383364392112, No Iterations 538
+FDICPCG:  Solving for p, Initial residual = 0.00324141015817, Final residual = 2.33315072777e-05, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 0.000430056865361, Final residual = 3.543028389e-06, No Iterations 40
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.00025232243961, global = -0.00025232243961, cumulative = 0.000160515649356
+FDICPCG:  Solving for p, Initial residual = 0.0106578140779, Final residual = 9.00602938686e-05, No Iterations 476
+FDICPCG:  Solving for p, Initial residual = 0.000471814736817, Final residual = 4.54096878539e-06, No Iterations 134
+FDICPCG:  Solving for p, Initial residual = 6.77565005699e-05, Final residual = 8.33090144012e-07, No Iterations 90
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000243042856536, global = -0.000243042856536, cumulative = -8.25272071792e-05
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0509918933008, Final residual = 2.34852525585e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0509916587549, Final residual = 2.55321343307e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0577905912741, Final residual = 1.75191372673e-09, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.479607926361, Final residual = 3.19849052372e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0375328945726, Final residual = 0.000349744854106, No Iterations 526
+FDICPCG:  Solving for p, Initial residual = 0.00235577912018, Final residual = 2.3424529468e-05, No Iterations 56
+FDICPCG:  Solving for p, Initial residual = 0.000293363038143, Final residual = 2.63065217581e-06, No Iterations 162
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.13143912916e-05, global = 4.13143912916e-05, cumulative = -4.12128158876e-05
+FDICPCG:  Solving for p, Initial residual = 0.0134948273714, Final residual = 0.000126425072822, No Iterations 529
+FDICPCG:  Solving for p, Initial residual = 0.00066379374139, Final residual = 5.88028171792e-06, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 8.56451861061e-05, Final residual = 8.44797771031e-07, No Iterations 25
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.0747513739e-05, global = -8.06999278295e-06, cumulative = -4.92828086705e-05
+FDICPCG:  Solving for p, Initial residual = 0.00473025494219, Final residual = 3.15149243026e-05, No Iterations 520
+FDICPCG:  Solving for p, Initial residual = 0.000152299666572, Final residual = 1.03414164199e-06, No Iterations 115
+FDICPCG:  Solving for p, Initial residual = 2.14783278832e-05, Final residual = 8.90095027442e-07, No Iterations 5
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.16304336574e-05, global = -6.36562528306e-06, cumulative = -5.56484339536e-05
+ExecutionTime = 2.922104 s  ClockTime = 3 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101244.171868 at location (-0.000143951180723 0.00145036143344 0.0045) in cell 1486 on processor 1
+    min() of T = 299.803460525 at location (0.000731612067518 0.000593240863629 0.0045) in cell 1815 on processor 1
+    min() of rho = 1.17297957924 at location (-0.000921183618356 0.00112275891975 0.0015) in cell 766 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.000731512705486 at location (-0.00128182359293 -0.000684717849968 0.0765) in cell 768 on processor 3
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101325.501864 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+    max() of T = 300.028862037 at location (0.000921183618356 -0.00112275891975 0.0975) in cell 378 on processor 2
+    max() of rho = 1.17422002052 at location (-0.000104101843075 0.00111232387498 0.1155) in cell 2412 on processor 5
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 1.99072469637 at location (0.000402408404233 -0.000317232107357 0.0045) in cell 972 on processor 1
+
+Courant Number mean: 0.214043254388 max: 0.907166449042
+deltaT = 0.000761904761905
+Time = 0.0042381s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.1739316802, Final residual = 3.51983602927e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.173931962961, Final residual = 4.05095920748e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.185745015332, Final residual = 1.00119175655e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.765508378071, Final residual = 1.34860369259e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.426812275669, Final residual = 0.0038473106984, No Iterations 534
+FDICPCG:  Solving for p, Initial residual = 0.000749115213658, Final residual = 5.99488061684e-06, No Iterations 48
+FDICPCG:  Solving for p, Initial residual = 8.4361906771e-05, Final residual = 8.37501551337e-07, No Iterations 47
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 8.00232986672e-05, global = 8.00232750237e-05, cumulative = 2.43748410701e-05
+FDICPCG:  Solving for p, Initial residual = 0.00810874302774, Final residual = 5.82752244268e-05, No Iterations 536
+FDICPCG:  Solving for p, Initial residual = 0.000238315358775, Final residual = 2.36200211915e-06, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 3.23459105357e-05, Final residual = 7.29546193089e-07, No Iterations 29
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000267178265737, global = -0.000267177568331, cumulative = -0.000242802727261
+FDICPCG:  Solving for p, Initial residual = 0.002678733183, Final residual = 1.55570442759e-05, No Iterations 520
+FDICPCG:  Solving for p, Initial residual = 5.71990731142e-05, Final residual = 8.11659729107e-07, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 7.64222238064e-06, Final residual = 3.79635811787e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000260408646278, global = -0.000260408646278, cumulative = -0.000503211373539
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0270598608355, Final residual = 8.10479387964e-10, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0270595120844, Final residual = 1.04539213704e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.128185562166, Final residual = 6.44219085612e-09, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.343073923614, Final residual = 5.33928970293e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00736763919104, Final residual = 7.08591241178e-05, No Iterations 542
+FDICPCG:  Solving for p, Initial residual = 0.000257283801144, Final residual = 2.38760716289e-06, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 3.43784584166e-05, Final residual = 7.87935528682e-07, No Iterations 15
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.79607286526e-05, global = -5.4059365175e-06, cumulative = -0.000508617310056
+FDICPCG:  Solving for p, Initial residual = 0.00137538142549, Final residual = 1.12799925869e-05, No Iterations 538
+FDICPCG:  Solving for p, Initial residual = 8.74461116996e-05, Final residual = 7.56404088087e-07, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 1.20422166257e-05, Final residual = 5.63873396604e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.62821189559e-05, global = 2.62283541312e-05, cumulative = -0.000482388955925
+FDICPCG:  Solving for p, Initial residual = 0.000315734788539, Final residual = 3.05792991854e-06, No Iterations 503
+FDICPCG:  Solving for p, Initial residual = 1.37179944218e-05, Final residual = 8.54230146443e-07, No Iterations 44
+FDICPCG:  Solving for p, Initial residual = 2.40785226491e-06, Final residual = 5.70121662378e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.47042715703e-05, global = 2.45629997733e-05, cumulative = -0.000457825956152
+ExecutionTime = 3.406825 s  ClockTime = 3 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101329.986538 at location (-9.73902352125e-22 -7.5e-05 0.2145) in cell 2659 on processor 6
+    min() of T = 300.000635444 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
+    min() of rho = 1.17402383568 at location (-0.000806686425472 0.00098619479098 0.2145) in cell 2601 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.176959862014 at location (-0.000143951180723 0.00145036143344 0.0495) in cell 2618 on processor 0
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101774.259106 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
+    max() of T = 300.260599234 at location (0.000417131993116 -0.000521561900657 0.0165) in cell 1365 on processor 1
+    max() of rho = 1.17880149437 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.06419338777 at location (0.0003 -0.000225 0.0045) in cell 956 on processor 1
+
+Courant Number mean: 0.320903256964 max: 0.917923244421
+deltaT = 0.000761904761905
+Time = 0.005s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.147380155303, Final residual = 6.19819180031e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.147380220164, Final residual = 7.21973523674e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.491246162168, Final residual = 4.38481746062e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.321997667273, Final residual = 7.93740878372e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0376835226226, Final residual = 0.000224964923227, No Iterations 527
+FDICPCG:  Solving for p, Initial residual = 0.00124578776163, Final residual = 9.44013752141e-06, No Iterations 37
+FDICPCG:  Solving for p, Initial residual = 0.000162437161152, Final residual = 1.28522187761e-06, No Iterations 15
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.69985674313e-05, global = 2.21344225621e-05, cumulative = -0.00043569153359
+FDICPCG:  Solving for p, Initial residual = 0.0150594821014, Final residual = 0.000127477995942, No Iterations 522
+FDICPCG:  Solving for p, Initial residual = 0.000592401788144, Final residual = 5.66426542964e-06, No Iterations 38
+FDICPCG:  Solving for p, Initial residual = 8.19826020945e-05, Final residual = 8.686918085e-07, No Iterations 29
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000131736133378, global = 0.000131736130398, cumulative = -0.000303955403191
+FDICPCG:  Solving for p, Initial residual = 0.0016997284959, Final residual = 1.27062424332e-05, No Iterations 510
+FDICPCG:  Solving for p, Initial residual = 0.000114018121241, Final residual = 9.37481407791e-07, No Iterations 24
+FDICPCG:  Solving for p, Initial residual = 1.70469463366e-05, Final residual = 7.41731766987e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.00012443644073, global = 0.000124436415346, cumulative = -0.000179518987845
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0429434539892, Final residual = 7.0691585307e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0429412281899, Final residual = 9.60820063308e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0798959497932, Final residual = 4.29379298671e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.304525287753, Final residual = 2.3124262334e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0129769234864, Final residual = 9.72269616845e-05, No Iterations 497
+FDICPCG:  Solving for p, Initial residual = 0.000590702992272, Final residual = 5.07812906621e-06, No Iterations 79
+FDICPCG:  Solving for p, Initial residual = 8.4846754166e-05, Final residual = 7.38082169924e-07, No Iterations 30
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.08716517774e-05, global = -3.07863117885e-05, cumulative = -0.000210305299633
+FDICPCG:  Solving for p, Initial residual = 0.0028293811971, Final residual = 2.59344893342e-05, No Iterations 498
+FDICPCG:  Solving for p, Initial residual = 0.000183455912697, Final residual = 1.8338052612e-06, No Iterations 63
+FDICPCG:  Solving for p, Initial residual = 2.70345077845e-05, Final residual = 8.81573301422e-07, No Iterations 19
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.91150694738e-05, global = 1.91150694738e-05, cumulative = -0.000191190230159
+FDICPCG:  Solving for p, Initial residual = 0.0010735465788, Final residual = 7.67137536298e-06, No Iterations 523
+FDICPCG:  Solving for p, Initial residual = 3.04584580593e-05, Final residual = 7.95572601413e-07, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 4.36531653287e-06, Final residual = 8.3677610827e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.88946798339e-05, global = 1.88314860125e-05, cumulative = -0.000172358744147
+ExecutionTime = 3.923486 s  ClockTime = 4 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101326.179753 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
+    min() of T = 299.996030853 at location (-0.000921183618356 -0.00112275891975 0.1725) in cell 130 on processor 7
+    min() of rho = 1.17398953593 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.192030553289 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101567.287643 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
+    max() of T = 300.262906124 at location (0.000635796848411 -4.79267645815e-05 0.0195) in cell 2526 on processor 1
+    max() of rho = 1.17679463891 at location (-0.000422323112718 -0.0013923955476 0.0015) in cell 2 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 3.05563887233 at location (0.000317232107357 0.000402408404233 0.2055) in cell 2991 on processor 6
+
+Courant Number mean: 0.52606612571 max: 0.932921310236
+deltaT = 0.000714285714286
+Time = 0.00571429s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.179480624481, Final residual = 3.84506823531e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.179481021164, Final residual = 4.10059229544e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.188586114006, Final residual = 9.65872905254e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.565222936558, Final residual = 4.01361848001e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.112810883448, Final residual = 0.00107910111829, No Iterations 520
+FDICPCG:  Solving for p, Initial residual = 0.00115186619899, Final residual = 1.08059175671e-05, No Iterations 39
+FDICPCG:  Solving for p, Initial residual = 0.000122177568919, Final residual = 1.13540919579e-06, No Iterations 64
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.44089398087e-05, global = -5.43860604215e-05, cumulative = -0.000226744804569
+FDICPCG:  Solving for p, Initial residual = 0.0151607902545, Final residual = 0.000129978526517, No Iterations 517
+FDICPCG:  Solving for p, Initial residual = 0.000425172821259, Final residual = 2.97543516657e-06, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 5.84751722549e-05, Final residual = 8.70603510969e-07, No Iterations 20
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000256551141414, global = 0.000256551141414, cumulative = 2.98063368455e-05
+FDICPCG:  Solving for p, Initial residual = 0.00546848686463, Final residual = 3.54649888849e-05, No Iterations 486
+FDICPCG:  Solving for p, Initial residual = 0.0001048010688, Final residual = 8.77774203799e-07, No Iterations 263
+FDICPCG:  Solving for p, Initial residual = 1.43953057727e-05, Final residual = 6.40071560601e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000259810444404, global = 0.000259810444404, cumulative = 0.00028961678125
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0204929991058, Final residual = 3.32332028192e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0204916837467, Final residual = 8.43203611698e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0511756543692, Final residual = 1.80006686984e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.252983797032, Final residual = 2.34078745987e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00444628602569, Final residual = 4.36990553203e-05, No Iterations 529
+FDICPCG:  Solving for p, Initial residual = 0.000262562188643, Final residual = 2.10936976847e-06, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 4.0680052234e-05, Final residual = 7.42198317215e-07, No Iterations 47
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.18391407622e-05, global = -1.17977986442e-05, cumulative = 0.000277818982606
+FDICPCG:  Solving for p, Initial residual = 0.00125696447701, Final residual = 1.10798847899e-05, No Iterations 529
+FDICPCG:  Solving for p, Initial residual = 8.28575032785e-05, Final residual = 9.71029611573e-07, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 1.28605126807e-05, Final residual = 5.05464836741e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.6332793639e-05, global = -1.6332793639e-05, cumulative = 0.000261486188967
+FDICPCG:  Solving for p, Initial residual = 0.000174135370276, Final residual = 1.56749098958e-06, No Iterations 522
+FDICPCG:  Solving for p, Initial residual = 1.1895147381e-05, Final residual = 9.56627741415e-07, No Iterations 13
+FDICPCG:  Solving for p, Initial residual = 2.19622220725e-06, Final residual = 8.42515549801e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.61647938961e-05, global = -1.61647938961e-05, cumulative = 0.000245321395071
+ExecutionTime = 4.453895 s  ClockTime = 4 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101026.55824 at location (0.00145036143344 -0.000143951180723 0.0165) in cell 934 on processor 1
+    min() of T = 299.789835291 at location (0.00098619479098 0.000806686425472 0.0015) in cell 1077 on processor 1
+    min() of rho = 1.17072890817 at location (1.94780470425e-21 -0.000225 0.0195) in cell 1934 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.13592286664 at location (-0.00145036143344 0.000143951180723 0.0495) in cell 1283 on processor 0
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101323.041264 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
+    max() of T = 299.999193855 at location (-0.000143951180723 -0.00145036143344 0.2145) in cell 276 on processor 6
+    max() of rho = 1.17396532168 at location (-0.000417131993116 0.000521561900657 0.2145) in cell 3068 on processor 6
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.86829963281 at location (0.000225 0.0003 0.2055) in cell 2901 on processor 6
+
+Courant Number mean: 0.439957584074 max: 0.878446302053
+deltaT = 0.000714285714286
+Time = 0.00642857s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0632167421158, Final residual = 1.65290668968e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0632166442838, Final residual = 2.82086404173e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.318624599136, Final residual = 9.52060391978e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.655746614657, Final residual = 4.70267329239e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0513445272043, Final residual = 0.000469873897942, No Iterations 528
+FDICPCG:  Solving for p, Initial residual = 0.000865431224425, Final residual = 5.71273495255e-06, No Iterations 31
+FDICPCG:  Solving for p, Initial residual = 0.000107852755348, Final residual = 8.3969506426e-07, No Iterations 30
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.51133506328e-05, global = -4.51132398905e-05, cumulative = 0.00020020815518
+FDICPCG:  Solving for p, Initial residual = 0.00788653239491, Final residual = 7.46131837061e-05, No Iterations 523
+FDICPCG:  Solving for p, Initial residual = 0.000357969004187, Final residual = 3.38920422168e-06, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 4.85555943998e-05, Final residual = 8.66431823984e-07, No Iterations 23
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.24800968148e-05, global = 2.89498319409e-05, cumulative = 0.000229157987121
+FDICPCG:  Solving for p, Initial residual = 0.00104228820482, Final residual = 9.12840851447e-06, No Iterations 528
+FDICPCG:  Solving for p, Initial residual = 6.04822941688e-05, Final residual = 9.47092435606e-07, No Iterations 22
+FDICPCG:  Solving for p, Initial residual = 9.05501544017e-06, Final residual = 4.3792162197e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.09594689533e-05, global = 2.42512646982e-05, cumulative = 0.000253409251819
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0285273348822, Final residual = 8.15336919574e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0285259696329, Final residual = 2.11527715432e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0933361784071, Final residual = 6.29901076598e-09, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.312565659366, Final residual = 7.59238504976e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.01057896493, Final residual = 7.71384307125e-05, No Iterations 497
+FDICPCG:  Solving for p, Initial residual = 0.000348667205855, Final residual = 2.89523128238e-06, No Iterations 54
+FDICPCG:  Solving for p, Initial residual = 4.59590752569e-05, Final residual = 9.01880532463e-07, No Iterations 23
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.26126876015e-05, global = 2.08871841764e-05, cumulative = 0.000274296435996
+FDICPCG:  Solving for p, Initial residual = 0.00191310620526, Final residual = 1.803324032e-05, No Iterations 507
+FDICPCG:  Solving for p, Initial residual = 0.00011471511899, Final residual = 1.06197367976e-06, No Iterations 45
+FDICPCG:  Solving for p, Initial residual = 1.5746394038e-05, Final residual = 7.89379547369e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.31720705037e-05, global = -2.3151795596e-05, cumulative = 0.0002511446404
+FDICPCG:  Solving for p, Initial residual = 0.000805000206611, Final residual = 7.59169457286e-06, No Iterations 340
+FDICPCG:  Solving for p, Initial residual = 2.16127070971e-05, Final residual = 8.24872138448e-07, No Iterations 262
+FDICPCG:  Solving for p, Initial residual = 3.16383582363e-06, Final residual = 7.41996425297e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.33190055489e-05, global = -2.32987672747e-05, cumulative = 0.000227845873125
+ExecutionTime = 4.9418 s  ClockTime = 5 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101048.979768 at location (-0.00145036143344 -0.000143951180723 0.0045) in cell 268 on processor 1
+    min() of T = 299.72937853 at location (4.79267645815e-05 0.000635796848411 0.0045) in cell 2881 on processor 1
+    min() of rho = 1.17090495642 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.000920474824084 at location (-0.00137647025719 0.000135240567485 0.0855) in cell 465 on processor 2
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101321.259354 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+    max() of T = 299.999102512 at location (-0.00145036143344 0.000143951180723 0.2145) in cell 1479 on processor 6
+    max() of rho = 1.17394753904 at location (-4.79267645815e-05 0.000635796848411 0.2145) in cell 3165 on processor 6
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.17847115948 at location (-1.94780470425e-21 -7.5e-05 0.0105) in cell 1718 on processor 1
+
+Courant Number mean: 0.263075106454 max: 0.874190832093
+deltaT = 0.000714285714286
+Time = 0.00714286s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.13346806343, Final residual = 3.08544048616e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.133468535893, Final residual = 7.10836737761e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.291144217591, Final residual = 2.15894874684e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.493069393811, Final residual = 1.55748800679e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0716509495596, Final residual = 0.000621588494297, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.00161790611028, Final residual = 1.50923533972e-05, No Iterations 38
+FDICPCG:  Solving for p, Initial residual = 0.000171701571304, Final residual = 1.5816587282e-06, No Iterations 56
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.95550396761e-05, global = 2.64570760595e-05, cumulative = 0.000254302949184
+FDICPCG:  Solving for p, Initial residual = 0.0185415675167, Final residual = 0.000179621421945, No Iterations 522
+FDICPCG:  Solving for p, Initial residual = 0.00053066278562, Final residual = 4.62424902679e-06, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 6.95798577213e-05, Final residual = 9.24799621616e-07, No Iterations 23
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000253474933151, global = -0.000253474933151, cumulative = 8.28016033057e-07
+FDICPCG:  Solving for p, Initial residual = 0.00924664853986, Final residual = 7.90521779262e-05, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.000166594798994, Final residual = 1.27446222805e-06, No Iterations 89
+FDICPCG:  Solving for p, Initial residual = 2.11035807364e-05, Final residual = 8.63228379101e-07, No Iterations 5
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000251208689696, global = -0.000251208689696, cumulative = -0.000250380673663
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0247413023946, Final residual = 9.80307798896e-10, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0247406492743, Final residual = 9.62949273273e-10, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.020512960635, Final residual = 9.77686952937e-10, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.497465892819, Final residual = 2.42401196639e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0163572516717, Final residual = 0.000120700341053, No Iterations 511
+FDICPCG:  Solving for p, Initial residual = 0.00039681624146, Final residual = 3.7403233173e-06, No Iterations 47
+FDICPCG:  Solving for p, Initial residual = 5.54347860136e-05, Final residual = 9.68776302787e-07, No Iterations 30
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.63882197234e-05, global = 2.63856206004e-05, cumulative = -0.000223995053063
+FDICPCG:  Solving for p, Initial residual = 0.00249829934391, Final residual = 1.68746505687e-05, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.000145903750613, Final residual = 1.3579043766e-06, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 2.10940220179e-05, Final residual = 8.71436446648e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 8.47439692754e-06, global = 7.14104647812e-06, cumulative = -0.000216854006585
+FDICPCG:  Solving for p, Initial residual = 0.000546291096173, Final residual = 4.39727646996e-06, No Iterations 486
+FDICPCG:  Solving for p, Initial residual = 2.21628772635e-05, Final residual = 9.74891752661e-07, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 3.59559488886e-06, Final residual = 8.15234455421e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 9.3771272667e-06, global = 8.06032458052e-06, cumulative = -0.000208793682004
+ExecutionTime = 5.449588 s  ClockTime = 5 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101326.285009 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+    min() of T = 299.957742084 at location (2.04519493946e-20 0.000375 0.0075) in cell 2632 on processor 1
+    min() of rho = 1.17398767634 at location (-0.00112275891975 0.000921183618356 0.2145) in cell 2084 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.000260254067128 at location (-0.00145036143344 -0.000143951180723 0.1425) in cell 366 on processor 4
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101484.921386 at location (0.000143951180723 0.00145036143344 0.0015) in cell 1487 on processor 1
+    max() of T = 300.10828989 at location (-0.00105742618627 0.000866407780411 0.0015) in cell 747 on processor 1
+    max() of rho = 1.17596190017 at location (2.04519493946e-20 0.000375 0.0075) in cell 2632 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.21308266626 at location (-1.94780470425e-21 -7.5e-05 0.0105) in cell 1718 on processor 1
+
+Courant Number mean: 0.230390244275 max: 0.871876714777
+deltaT = 0.000714285714286
+Time = 0.00785714s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0966296444038, Final residual = 2.45540520457e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0966301480029, Final residual = 2.85370042122e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.213382550401, Final residual = 7.31283844436e-09, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.854545108484, Final residual = 3.11518093979e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.106149554203, Final residual = 0.000830692036235, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.000553148976775, Final residual = 5.34526669955e-06, No Iterations 39
+FDICPCG:  Solving for p, Initial residual = 6.10595993634e-05, Final residual = 9.37909570503e-07, No Iterations 91
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 6.15181045261e-05, global = 6.15161441991e-05, cumulative = -0.000147277537805
+FDICPCG:  Solving for p, Initial residual = 0.00571947975092, Final residual = 4.64481281319e-05, No Iterations 517
+FDICPCG:  Solving for p, Initial residual = 0.000187501833714, Final residual = 1.66155713581e-06, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 2.56279221794e-05, Final residual = 9.40339804231e-07, No Iterations 5
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000128963161106, global = -0.000128963161106, cumulative = -0.000276240698911
+FDICPCG:  Solving for p, Initial residual = 0.00187554941665, Final residual = 1.44530345276e-05, No Iterations 496
+FDICPCG:  Solving for p, Initial residual = 4.97846122109e-05, Final residual = 9.39638912674e-07, No Iterations 47
+FDICPCG:  Solving for p, Initial residual = 6.99330108349e-06, Final residual = 5.11290469461e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.00012369357614, global = -0.00012369357614, cumulative = -0.000399934275051
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0250181323707, Final residual = 2.84841321045e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0250184723944, Final residual = 1.6691714523e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0941234864361, Final residual = 9.73520851814e-10, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.323024521954, Final residual = 8.64501600528e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00805814211674, Final residual = 6.54955236949e-05, No Iterations 507
+FDICPCG:  Solving for p, Initial residual = 0.000284385086495, Final residual = 2.71207986774e-06, No Iterations 73
+FDICPCG:  Solving for p, Initial residual = 3.91191624165e-05, Final residual = 9.49798568533e-07, No Iterations 80
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.54863206897e-05, global = -1.54799269242e-05, cumulative = -0.000415414201975
+FDICPCG:  Solving for p, Initial residual = 0.00111026775841, Final residual = 1.07386255412e-05, No Iterations 534
+FDICPCG:  Solving for p, Initial residual = 9.04288407296e-05, Final residual = 8.80935189249e-07, No Iterations 20
+FDICPCG:  Solving for p, Initial residual = 1.29475110667e-05, Final residual = 5.67076481069e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.09562434728e-05, global = 2.09562434728e-05, cumulative = -0.000394457958502
+FDICPCG:  Solving for p, Initial residual = 0.000505992890429, Final residual = 4.68059715173e-06, No Iterations 462
+FDICPCG:  Solving for p, Initial residual = 1.5407442299e-05, Final residual = 6.74855769772e-07, No Iterations 73
+FDICPCG:  Solving for p, Initial residual = 2.33604729783e-06, Final residual = 6.17927676561e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.01059976155e-05, global = 2.00969967803e-05, cumulative = -0.000374360961722
+ExecutionTime = 5.955205 s  ClockTime = 6 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101329.918305 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
+    min() of T = 299.999587016 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+    min() of rho = 1.17402412439 at location (0.00098619479098 -0.000806686425472 0.2145) in cell 1255 on processor 6
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.166438604827 at location (0.00145036143344 0.000143951180723 0.0075) in cell 629 on processor 1
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101681.419941 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
+    max() of T = 300.248048912 at location (-0.000317232107357 0.000402408404233 0.0255) in cell 3108 on processor 1
+    max() of rho = 1.17788590468 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.49265272667 at location (0 7.5e-05 0.1995) in cell 2116 on processor 6
+
+Courant Number mean: 0.372323436089 max: 0.875206510606
+deltaT = 0.000714285714286
+Time = 0.00857143s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.137221429189, Final residual = 5.73127855614e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.137220626083, Final residual = 7.60105385178e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.328537118375, Final residual = 5.13119403041e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.17350776743, Final residual = 5.04346022762e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0502951332199, Final residual = 0.000385779175237, No Iterations 528
+FDICPCG:  Solving for p, Initial residual = 0.00538945040353, Final residual = 5.11059828636e-05, No Iterations 32
+FDICPCG:  Solving for p, Initial residual = 0.000639225613056, Final residual = 5.99367514011e-06, No Iterations 40
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 9.52189614365e-06, global = -6.10828035989e-06, cumulative = -0.000380469242082
+FDICPCG:  Solving for p, Initial residual = 0.0380314793346, Final residual = 0.00037092357946, No Iterations 523
+FDICPCG:  Solving for p, Initial residual = 0.00198353096675, Final residual = 1.53876812853e-05, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 0.000266384346104, Final residual = 2.13563953328e-06, No Iterations 23
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000188863864502, global = 0.000188863864502, cumulative = -0.00019160537758
+FDICPCG:  Solving for p, Initial residual = 0.0110427166697, Final residual = 9.18174701986e-05, No Iterations 532
+FDICPCG:  Solving for p, Initial residual = 0.000415821872456, Final residual = 3.42485004865e-06, No Iterations 37
+FDICPCG:  Solving for p, Initial residual = 5.73216258989e-05, Final residual = 8.15789944859e-07, No Iterations 30
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000182073556327, global = 0.000182073556327, cumulative = -9.53182125284e-06
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0251063357501, Final residual = 3.9937391644e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0251056485095, Final residual = 5.34078576357e-10, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0280034544919, Final residual = 1.5545042647e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.363515277168, Final residual = 3.01074943177e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0269823002815, Final residual = 0.000238322984884, No Iterations 497
+FDICPCG:  Solving for p, Initial residual = 0.00129574903202, Final residual = 1.06958273935e-05, No Iterations 72
+FDICPCG:  Solving for p, Initial residual = 0.000166086101389, Final residual = 1.25680369977e-06, No Iterations 187
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.55006544004e-05, global = -2.55006544004e-05, cumulative = -3.50324756532e-05
+FDICPCG:  Solving for p, Initial residual = 0.00538524450004, Final residual = 4.13491365659e-05, No Iterations 513
+FDICPCG:  Solving for p, Initial residual = 0.000341577504231, Final residual = 2.64780805581e-06, No Iterations 38
+FDICPCG:  Solving for p, Initial residual = 4.9346005751e-05, Final residual = 9.60091018074e-07, No Iterations 13
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.48112147773e-06, global = 5.18733163975e-06, cumulative = -2.98451440135e-05
+FDICPCG:  Solving for p, Initial residual = 0.00309425914541, Final residual = 2.05414260178e-05, No Iterations 486
+FDICPCG:  Solving for p, Initial residual = 7.731415383e-05, Final residual = 7.47745121617e-07, No Iterations 272
+FDICPCG:  Solving for p, Initial residual = 1.04862946878e-05, Final residual = 5.72128507186e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.34772688557e-06, global = 4.90897155663e-06, cumulative = -2.49361724568e-05
+ExecutionTime = 6.492288 s  ClockTime = 6 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101316.031972 at location (2.92170705637e-21 7.5e-05 0.1725) in cell 2116 on processor 7
+    min() of T = 299.973573667 at location (0.00112275891975 -0.000921183618356 0.0015) in cell 90 on processor 1
+    min() of rho = 1.17374284507 at location (1.5582437634e-20 0.000375 0.1545) in cell 3050 on processor 4
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.17240525331 at location (0.00145036143344 0.000143951180723 0.0075) in cell 629 on processor 1
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101405.023563 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
+    max() of T = 300.15093309 at location (-7.5e-05 0.00015 0.0255) in cell 2989 on processor 1
+    max() of rho = 1.17500541512 at location (0.00112275891975 0.000921183618356 0.0015) in cell 778 on processor 1
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 3.29065177923 at location (-7.5e-05 -2.92170705637e-21 0.2025) in cell 2117 on processor 6
+
+Courant Number mean: 0.474477606599 max: 0.880072447479
+deltaT = 0.000714285714286
+Time = 0.00928571s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0981079431595, Final residual = 1.97453495351e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0981085244379, Final residual = 2.11150970395e-09, No Iterations 4
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0833358350595, Final residual = 4.02785699447e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.681802986128, Final residual = 6.57859772828e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.29143751612, Final residual = 0.00245783001107, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.000750736344172, Final residual = 6.9936466824e-06, No Iterations 47
+FDICPCG:  Solving for p, Initial residual = 8.10901837167e-05, Final residual = 7.76703542205e-07, No Iterations 101
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.565570984e-05, global = -5.565570984e-05, cumulative = -8.05918822968e-05
+FDICPCG:  Solving for p, Initial residual = 0.00864033272909, Final residual = 4.52914837511e-05, No Iterations 521
+FDICPCG:  Solving for p, Initial residual = 0.000246009449648, Final residual = 1.85716630712e-06, No Iterations 23
+FDICPCG:  Solving for p, Initial residual = 3.44633176265e-05, Final residual = 8.54796815766e-07, No Iterations 13
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000176923119413, global = 0.00017691509084, cumulative = 9.6323208543e-05
+FDICPCG:  Solving for p, Initial residual = 0.00365067040339, Final residual = 3.326334186e-05, No Iterations 450
+FDICPCG:  Solving for p, Initial residual = 7.38753871316e-05, Final residual = 9.63243924319e-07, No Iterations 336
+FDICPCG:  Solving for p, Initial residual = 9.54666051913e-06, Final residual = 5.07697407306e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.000178189273651, global = 0.000178189181221, cumulative = 0.000274512389764
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0159848631551, Final residual = 2.2561444495e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0159861679269, Final residual = 2.7838991608e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0584905239493, Final residual = 1.61591028968e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.249199018495, Final residual = 1.56839795205e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.00671894709461, Final residual = 6.68237087207e-05, No Iterations 532
+FDICPCG:  Solving for p, Initial residual = 0.000296308316719, Final residual = 2.57283399054e-06, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 4.10294721976e-05, Final residual = 8.53023781844e-07, No Iterations 40
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.72428455188e-06, global = 2.19385551356e-06, cumulative = 0.000276706245278
+FDICPCG:  Solving for p, Initial residual = 0.00117089031798, Final residual = 9.63258910094e-06, No Iterations 507
+FDICPCG:  Solving for p, Initial residual = 9.55022240732e-05, Final residual = 7.51057764006e-07, No Iterations 49
+FDICPCG:  Solving for p, Initial residual = 1.37706190012e-05, Final residual = 6.71906648074e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.75719137525e-05, global = -1.75431960087e-05, cumulative = 0.000259163049269
+FDICPCG:  Solving for p, Initial residual = 0.000352089944814, Final residual = 2.86234327712e-06, No Iterations 522
+FDICPCG:  Solving for p, Initial residual = 1.36093454365e-05, Final residual = 9.87005792544e-07, No Iterations 13
+FDICPCG:  Solving for p, Initial residual = 2.27949616845e-06, Final residual = 8.60293288325e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.6911486796e-05, global = -1.68539010515e-05, cumulative = 0.000242309148217
+ExecutionTime = 7.045896 s  ClockTime = 7 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101034.759529 at location (0.000143951180723 0.00145036143344 0.0045) in cell 1689 on processor 1
+    min() of T = 299.797985442 at location (0.000908537179302 0.000741577244729 0.0015) in cell 1245 on processor 1
+    min() of rho = 1.17090345276 at location (-0.00145036143344 0.000143951180723 0.0045) in cell 367 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.00118963166285 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101322.341817 at location (-7.5e-05 0 0.2145) in cell 2792 on processor 6
+    max() of T = 299.99924852 at location (-0.000143951180723 -0.00145036143344 0.2145) in cell 276 on processor 6
+    max() of rho = 1.17396446363 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.71628808013 at location (-9.73902352125e-22 -7.5e-05 0.1425) in cell 1512 on processor 4
+
+Courant Number mean: 0.382763352074 max: 0.880182065901
+deltaT = 0.000714285714286
+Time = 0.01s
+
+PIMPLE: Iteration 1
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0624631241873, Final residual = 6.91725080971e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0624632394701, Final residual = 9.05739060232e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.299170430597, Final residual = 5.83787017364e-09, No Iterations 4
+DILUPBiCGStab:  Solving for h, Initial residual = 0.353847045731, Final residual = 2.77637028637e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0195565504205, Final residual = 0.000174868704186, No Iterations 524
+FDICPCG:  Solving for p, Initial residual = 0.0010430443176, Final residual = 7.78394259554e-06, No Iterations 28
+FDICPCG:  Solving for p, Initial residual = 0.000132177087699, Final residual = 1.1963306954e-06, No Iterations 66
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.02711062828e-05, global = -1.76408618856e-05, cumulative = 0.000224668286332
+FDICPCG:  Solving for p, Initial residual = 0.00772484483995, Final residual = 6.75184915996e-05, No Iterations 489
+FDICPCG:  Solving for p, Initial residual = 0.000428511550341, Final residual = 4.20836233109e-06, No Iterations 63
+FDICPCG:  Solving for p, Initial residual = 5.75481391805e-05, Final residual = 8.80868497222e-07, No Iterations 40
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 6.96886580714e-05, global = -6.96722598945e-05, cumulative = 0.000154996026437
+FDICPCG:  Solving for p, Initial residual = 0.00144687720301, Final residual = 1.38226909104e-05, No Iterations 514
+FDICPCG:  Solving for p, Initial residual = 5.89949129629e-05, Final residual = 7.95460455653e-07, No Iterations 47
+FDICPCG:  Solving for p, Initial residual = 8.29188106448e-06, Final residual = 4.91227296033e-07, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 6.97020684482e-05, global = -6.9687048196e-05, cumulative = 8.53089782413e-05
+PIMPLE: Iteration 2
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0281051719825, Final residual = 9.76456212821e-10, No Iterations 3
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.028105086166, Final residual = 1.79166132344e-09, No Iterations 3
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0603826029098, Final residual = 3.80203040017e-09, No Iterations 3
+DILUPBiCGStab:  Solving for h, Initial residual = 0.337419864977, Final residual = 7.41912849486e-09, No Iterations 4
+FDICPCG:  Solving for p, Initial residual = 0.0147125987554, Final residual = 0.000113671126629, No Iterations 498
+FDICPCG:  Solving for p, Initial residual = 0.000571001157251, Final residual = 4.91476567986e-06, No Iterations 84
+FDICPCG:  Solving for p, Initial residual = 7.69189199334e-05, Final residual = 6.73987532501e-07, No Iterations 126
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.1843746847e-05, global = 2.04226471126e-05, cumulative = 0.000105731625354
+FDICPCG:  Solving for p, Initial residual = 0.00280049225619, Final residual = 2.51215790983e-05, No Iterations 523
+FDICPCG:  Solving for p, Initial residual = 0.000185278285374, Final residual = 1.76824312417e-06, No Iterations 29
+FDICPCG:  Solving for p, Initial residual = 2.58375980935e-05, Final residual = 9.80947298047e-07, No Iterations 15
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.40216274312e-05, global = -1.40216274312e-05, cumulative = 9.17099979228e-05
+FDICPCG:  Solving for p, Initial residual = 0.00122656378811, Final residual = 8.90178328694e-06, No Iterations 507
+FDICPCG:  Solving for p, Initial residual = 3.10810201961e-05, Final residual = 7.55923759448e-07, No Iterations 37
+FDICPCG:  Solving for p, Initial residual = 4.41467921589e-06, Final residual = 8.67892955887e-07, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.43071856092e-05, global = -1.43071856092e-05, cumulative = 7.74028123136e-05
+ExecutionTime = 7.575494 s  ClockTime = 8 s
+
+
+
+volFieldValue mindomain_scalar write:
+    min() of p = 101170.453079 at location (0.000143951180723 0.00145036143344 0.0105) in cell 2089 on processor 1
+    min() of T = 299.803707839 at location (0.000225 0.0003 0.0105) in cell 2647 on processor 1
+    min() of rho = 1.17221850333 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
+
+volFieldValue mindomain_vector write:
+    minMag() of U = 0.00227750978894 at location (0.00105742618627 -0.000866407780411 0.0915) in cell 362 on processor 2
+
+volFieldValue maxdomain_scalar write:
+    max() of p = 101323.498722 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
+    max() of T = 299.999566737 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
+    max() of rho = 1.17397627669 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
+
+volFieldValue maxdomain_vector write:
+    maxMag() of U = 2.36409507828 at location (-7.5e-05 0 0.0165) in cell 2310 on processor 1
+
+End
+
+Finalising parallel run

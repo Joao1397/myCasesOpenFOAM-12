@@ -9,19 +9,33 @@ FoamFile
 {
     format      ascii;
     class       dictionary;
-    object      momentumTransport;
+    object      fvConstraints;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-simulationType  laminar;
+limitp
+{
+    type       limitPressure;
 
-/*
-//RASModel        kOmegaSST;
-RASModel        laminar;
+    minFactor  0.2;	//0.5
+    maxFactor  5;	//2
+}
 
-//turbulence      on;
-turbulence      off;
+limitT
+{
+//These options are not used in this new setup
 
-printCoeffs     on;
-*/
-// ************************************************************************* //
+    active          son;
+    timeStart       s0;
+    duration        s1;	//0.1-1
+
+    type       limitTemperature;
+
+    min        100;
+    max        1000;
+
+    selectionMode all;
+}
+
+//************************************************************************** //
+

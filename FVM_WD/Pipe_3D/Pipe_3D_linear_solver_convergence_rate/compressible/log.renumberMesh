@@ -1,0 +1,81 @@
+--------------------------------------------------------------------------
+[[22765,1],2]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ElMakinon
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : renumberMesh -overwrite -parallel
+Date   : Jul 05 2025
+Time   : 20:12:50
+Host   : "ElMakinon"
+PID    : 4560
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
+nProcs : 8
+Slaves : 
+7
+(
+"ElMakinon.4561"
+"ElMakinon.4562"
+"ElMakinon.4563"
+"ElMakinon.4564"
+"ElMakinon.4565"
+"ElMakinon.4566"
+"ElMakinon.4567"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 25344
+Before renumbering :
+    band           : 2584
+    profile        : 7303128
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+Reading volScalarField p
+Reading volScalarField T
+Reading volScalarField yPlus
+Reading volVectorField vorticity
+Reading volVectorField U
+
+Renumbering processor cell decomposition map cellProcAddressing
+Renumbering processor face decomposition map faceProcAddressing
+Renumbering processor point decomposition map pointProcAddressing
+After renumbering :
+    band           : 209
+    profile        : 3865270
+
+Writing mesh to "constant"
+
+End
+
+Finalising parallel run

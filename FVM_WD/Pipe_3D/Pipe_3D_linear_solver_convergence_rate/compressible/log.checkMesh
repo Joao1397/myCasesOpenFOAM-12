@@ -1,0 +1,114 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : checkMesh -writeSets -meshQuality -allGeometry -allTopology
+Date   : Jul 05 2025
+Time   : 20:12:49
+Host   : "ElMakinon"
+PID    : 4553
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Enabling all (cell, face, edge, point) topology checks.
+
+Enabling all geometry checks.
+
+Enabling user-defined geometry checks.
+
+Reconstructing and writing the problem points in vtk format
+
+Time = 0s
+
+Mesh stats
+    points:           26937
+    faces:            77536
+    internal faces:   74528
+    cells:            25344
+    faces per cell:   6
+    boundary patches: 3
+    point zones:      0
+    face zones:       0
+    cell zones:       2
+
+Overall number of cells of each type:
+    hexahedra:     25344
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Topological cell zip-up check OK.
+    Face-face connectivity OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+    Patch               Faces    Points   Surface topology                  
+    inlet               352      369      ok (non-closed singly connected)  
+    walls               2304     2336     ok (non-closed singly connected)  
+    outlet              352      369      ok (non-closed singly connected)  
+
+Checking geometry...
+    Overall domain bounding box (-0.0015 -0.0015 0) (0.0015 0.0015 0.216)
+    Patch bounding boxes
+        inlet                (-0.0015 -0.0015 0) (0.0015 0.0015 0)
+        walls                (-0.0015 -0.0015 0) (0.0015 0.0015 0.216)
+        outlet               (-0.0015 -0.0015 0.216) (0.0015 0.0015 0.216)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Max cell openness = 2.22496445363e-16 OK.
+    Max aspect ratio = 45.1062615965 OK.
+    Minimum face area = 1.125e-08. Maximum face area = 8.82154262977e-07.  Face area magnitudes OK.
+    Min volume = 3.375e-11. Max volume = 7.54329244006e-11.  Total volume = 1.51702234403e-06.  Cell volumes OK.
+    Mesh non-orthogonality Max: 25.9619433412 average: 5.79970495044
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 0.486380068275 OK.
+    Coupled point location match (average 0) OK.
+    Face tets OK.
+    Min/max edge length = 6.89719667438e-05 0.003 OK.
+    All angles in faces OK.
+    Face flatness (1 = flat, 0 = butterfly) : min = 1  average = 1
+    All face flatness OK.
+    Cell determinant (wellposedness) : minimum: 0.0111777046148 average: 0.130973876677
+    Cell determinant check OK.
+    Concave cell check OK.
+    Face interpolation weight : minimum: 0.385325744304 average: 0.493314021603
+    Face interpolation weight check OK.
+    Face volume ratio : minimum: 0.573651349298 average: 0.965223608791
+    Face volume ratio check OK.
+Checking faces in error :
+    non-orthogonality > 70  degrees                        : 0
+    faces with face pyramid volume < 1e-13                 : 0
+    faces with concavity > 80  degrees                     : 0
+    faces with skewness > 4   (internal) or 20  (boundary) : 0
+    faces with interpolation weights (0..1)  < 0.05        : 0
+    faces with volume ratio of neighbour cells < 0.01      : 0
+    faces with face twist < 0.02                           : 0
+    faces on cells with determinant < 0.001                : 0
+
+Mesh OK.
+
+End
+

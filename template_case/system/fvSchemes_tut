@@ -62,7 +62,6 @@ gradSchemes
     Observacion #3: Solo los modelos k-epsilon y k-omega estan en los tutoriales.
     Observacion #4: ESTO SOLO VIENE DE LOS TUTORIALES. NO NECESARIAMENTE ES LO QUE DEBE SER.
     Observacion #5: Que pasa en el caso de una simulacion compresible? No hay terminos de gradiente para la densidad? 
-    Observacion #6: Que pasa con el gradiente de la velocidad? No deberia tener un gradiente?
     Observacion #7: Es poco comun usar el cellLimited en el caso de las cantidades de turbulencia, pero no es imposible.
     Observacion #8: They use the cellLimited scheme which limits the gradient such that when cell values are extrapolated to faces using the calculated gradient, the face values do not fall outside the bounds of values in surrounding cells. 1 is invariably used.
     */

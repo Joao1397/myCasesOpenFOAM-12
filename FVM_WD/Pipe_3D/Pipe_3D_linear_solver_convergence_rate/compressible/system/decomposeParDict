@@ -8,37 +8,13 @@
 FoamFile
 {
     format      ascii;
-    class       volVectorField;
-    object      U;
+    class       dictionary;
+    location    "system";
+    object      decomposeParDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
-
-internalField   uniform (0 0 0);
-
-boundaryField
-{
-    inlet
-    {
-        type            flowRateInletVelocity;
-        volumetricFlowRate 
-        {
-            type            constant;
-            value           1e-05;
-        }
-        extrapolateProfile 0;
-        value           uniform (0 0 0);
-    }
-    walls
-    {
-        type            fixedValue;
-        value           uniform (0 0 0);
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-}
+numberOfSubdomains 8;
+method          scotch;
 
 // ************************************************************************* //

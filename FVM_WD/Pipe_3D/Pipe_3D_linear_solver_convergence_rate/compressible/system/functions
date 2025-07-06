@@ -1,0 +1,135 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      functions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#includeFunc residuals
+(
+    name = residuals,
+    fields = (p U T),
+    log = true
+)
+
+/*
+inMassFlow
+{
+    type            surfaceFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+    enabled         true; // false
+    log             true; // false
+    writeControl    timeStep;
+    writeInterval   1;
+    log             true;
+    writeFields     true;
+    select          patch;
+    name            inlet;
+    operation       sum;
+    fields
+    (
+                    phi
+    );
+}
+
+outMassFlow
+{
+    type            surfaceFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+    enabled         true; // false
+    log             true; // false
+    writeControl    timeStep;
+    writeInterval   1;
+    log             yes;
+    writeFields     false;
+    select          patch;
+    name            outlet;
+    operation       sum;
+    fields
+    (
+                    phi
+    );
+}
+*/
+
+minmaxdomain_scalar
+{
+    type            volFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+    enabled 	    true; // false
+    log             true; // false
+    writeControl    timeStep;
+    writeInterval   1;
+    writeFields     false;	//write solution to field value - Not needed when only reporting value to screen
+    writeLocation   true;	//write location in the output file
+
+    // mode component;
+    select      all;
+    operation       none;
+    fields
+    (
+        p T rho
+    );
+}
+
+minmaxdomain_vector
+{
+    type            volFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+    enabled 	    true; 	// false
+    log             true;	// false
+    writeControl    timeStep;
+    writeInterval   1;
+    writeFields     false;	//write solution to field value - Not needed when only reporting value to screen
+    writeLocation   true;	//write location in the output file
+
+    // mode component;
+    select      all;
+    operation   none;
+    fields
+    (
+        U
+    );
+}
+
+mindomain_scalar
+{
+    $minmaxdomain_scalar
+    operation       min;
+}
+
+mindomain_vector
+{
+    $minmaxdomain_vector
+    operation       minMag;
+}
+
+maxdomain_scalar
+{
+    $minmaxdomain_scalar
+    operation       max;
+}
+
+maxdomain_vector
+{
+    $minmaxdomain_vector
+    operation       maxMag;
+}
+
+yplus_field
+{
+    type                yPlus;
+    libs                ("libutilityFunctionObjects.so");
+    enabled             true;
+    log                 false;
+    writeControl        outputTime;
+}

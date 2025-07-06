@@ -7,38 +7,34 @@
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
-    format      ascii;
-    class       volVectorField;
-    object      U;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
-
-internalField   uniform (0 0 0);
-
-boundaryField
-{
+3
+(
     inlet
     {
-        type            flowRateInletVelocity;
-        volumetricFlowRate 
-        {
-            type            constant;
-            value           1e-05;
-        }
-        extrapolateProfile 0;
-        value           uniform (0 0 0);
+        type            patch;
+        nFaces          352;
+        startFace       74528;
     }
     walls
     {
-        type            fixedValue;
-        value           uniform (0 0 0);
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          2304;
+        startFace       74880;
     }
     outlet
     {
-        type            zeroGradient;
+        type            patch;
+        nFaces          352;
+        startFace       77184;
     }
-}
+)
 
 // ************************************************************************* //

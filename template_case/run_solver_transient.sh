@@ -17,3 +17,5 @@ postProcessing -func flowType -time 200
 postProcessing -func "components(U)"
 postProcessing -func "add(Ux, Uy, Uz)"
 postProcessing -func "grad(p)"
+postProcessing -func time
+postProcessing -func timeStep

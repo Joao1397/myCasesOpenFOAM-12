@@ -1,0 +1,111 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-17d01581437c
+Exec   : reconstructPar -rm
+Date   : Jul 05 2025
+Time   : 20:12:59
+Host   : "ElMakinon"
+PID    : 4627
+I/O    : uncollated
+Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+
+Time = 0.005s
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p_0
+        CrankNicolson:ddt0(rho,h)
+        rho
+        CrankNicolson:ddt0(rho)
+        CrankNicolson:ddt0(p)
+        CrankNicolson:ddt0(rho,K)
+        p
+        rho_0
+        T
+        yPlus
+
+    Reconstructing volVectorFields
+
+        CrankNicolson:ddtCorrDdt0(rho,U)
+        U
+        U_0
+        CrankNicolson:ddt0(rho,U)
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        phi_0
+        CrankNicolson:ddtCorrDdt0(phi)
+
+Reconstructing point fields
+
+    (no point fields)
+
+Collecting uniform files
+
+Removing processors time directory
+
+Time = 0.01s
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p_0
+        CrankNicolson:ddt0(rho,h)
+        rho
+        CrankNicolson:ddt0(rho)
+        CrankNicolson:ddt0(p)
+        CrankNicolson:ddt0(rho,K)
+        p
+        rho_0
+        T
+        yPlus
+
+    Reconstructing volVectorFields
+
+        CrankNicolson:ddtCorrDdt0(rho,U)
+        U
+        U_0
+        CrankNicolson:ddt0(rho,U)
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        phi_0
+        CrankNicolson:ddtCorrDdt0(phi)
+
+Reconstructing point fields
+
+    (no point fields)
+
+Collecting uniform files
+
+Removing processors time directory
+
+End
+

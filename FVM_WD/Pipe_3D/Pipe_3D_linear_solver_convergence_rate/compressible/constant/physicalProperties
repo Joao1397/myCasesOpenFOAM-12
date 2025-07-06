@@ -8,37 +8,45 @@
 FoamFile
 {
     format      ascii;
-    class       volVectorField;
-    object      U;
+    class       dictionary;
+    object      physicalProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
-
-internalField   uniform (0 0 0);
-
-boundaryField
+thermoType
 {
-    inlet
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+mixture
+{
+    specie
     {
-        type            flowRateInletVelocity;
-        volumetricFlowRate 
-        {
-            type            constant;
-            value           1e-05;
-        }
-        extrapolateProfile 0;
-        value           uniform (0 0 0);
+        nMoles      1;
+        molWeight   28.9;
     }
-    walls
+    
+    thermodynamics
     {
-        type            fixedValue;
-        value           uniform (0 0 0);
+        Cp          1004;
+        Hf          0;
     }
-    outlet
+    
+    transport
     {
-        type            zeroGradient;
+        mu          1.846e-05;
+        Pr          0.707;
     }
 }
+
+//Air at 300K
+//rho = 1.177
+//nu  = 1.568e-5
 
 // ************************************************************************* //

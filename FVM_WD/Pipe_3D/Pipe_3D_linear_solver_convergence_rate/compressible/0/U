@@ -7,8 +7,9 @@
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
-    format      ascii;
+    format      binary;
     class       volVectorField;
+    location    "0";
     object      U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -27,18 +28,20 @@ boundaryField
             type            constant;
             value           1e-05;
         }
-        extrapolateProfile 0;
         value           uniform (0 0 0);
     }
+
     walls
     {
         type            fixedValue;
         value           uniform (0 0 0);
     }
+    
     outlet
     {
         type            zeroGradient;
     }
 }
+
 
 // ************************************************************************* //

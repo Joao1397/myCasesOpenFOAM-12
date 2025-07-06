@@ -1,0 +1,25 @@
+set terminal qt 0
+
+set title 'Solution at time 0.2 s' 
+
+set xlabel 'Diameter'
+set ylabel 'U_x' 
+
+#set xtics 0,0.1,1.
+set grid
+
+#set key font ',6'
+#set key spacing 0.5
+#set key samplen 2
+#set key top
+
+plot [][] \
+ './postProcessing/sampleDict/0.2/s2.xy' u 1:4 w lp lt 1 lc rgb 'blue' pt 7 title 'Numerical solution', \
+  2.8265538*(1-x**2/0.0010606602**2) lc rgb 'red' title 'Analytical solution'
+
+set terminal qt 1
+plot [][] 'postProcessing/sampleDict/0.2/s1.xy' u 1:5 w l
+
+pause -1
+
+#    EOF
