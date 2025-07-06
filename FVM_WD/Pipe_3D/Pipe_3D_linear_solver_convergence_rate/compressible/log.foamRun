@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-[[22736,1],3]: A high-performance Open MPI point-to-point messaging module
+[[22398,1],5]: A high-performance Open MPI point-to-point messaging module
 was unable to find any relevant network interfaces:
 
 Module: OpenFabrics (openib)
@@ -18,22 +18,22 @@ lower performance.
 Build  : 12-17d01581437c
 Exec   : foamRun -parallel
 Date   : Jul 05 2025
-Time   : 20:12:51
+Time   : 20:40:07
 Host   : "ElMakinon"
-PID    : 4595
+PID    : 7777
 I/O    : uncollated
 Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
 nProcs : 8
 Slaves : 
 7
 (
-"ElMakinon.4596"
-"ElMakinon.4597"
-"ElMakinon.4598"
-"ElMakinon.4599"
-"ElMakinon.4600"
-"ElMakinon.4601"
-"ElMakinon.4602"
+"ElMakinon.7778"
+"ElMakinon.7779"
+"ElMakinon.7780"
+"ElMakinon.7781"
+"ElMakinon.7782"
+"ElMakinon.7783"
+"ElMakinon.7784"
 )
 
 Pstream initialised with:
@@ -91,50 +91,8 @@ PIMPLE: No corrector convergence criteria found
 PIMPLE: Operating solver in transient mode with 2 outer correctors
 
 
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
-    - selecting all cells
-    - selected 25344 cell(s) with volume 1.51702234403e-06
-
-
 
 Starting time loop
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101325 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-    min() of T = 300 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-    min() of rho = 1.17397474861 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101325 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-    max() of T = 300 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-    max() of rho = 1.17397474861 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 0 at location (-0.000143951180723 -0.00145036143344 0.1635) in cell 0 on processor 7
 
 Courant Number mean: 0 max: 0
 deltaT = 0.000555555555556
@@ -181,25 +139,7 @@ FDICPCG:  Solving for p, Initial residual = 1.8592856704e-05, Final residual = 9
 FDICPCG:  Solving for p, Initial residual = 3.3267910812e-06, Final residual = 9.17701209023e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 6.12905953365e-05, global = 6.12905953365e-05, cumulative = -0.000373600510668
-ExecutionTime = 0.799807 s  ClockTime = 1 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101327.782423 at location (-0.00112275891975 -0.000921183618356 0.2145) in cell 769 on processor 6
-    min() of T = 300.000510629 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
-    min() of rho = 1.17400050266 at location (-0.00050894412389 -0.000631068896714 0.2145) in cell 1583 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.278534936212 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101833.860153 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
-    max() of T = 300.338416115 at location (0.000631068896714 -0.00050894412389 0.0045) in cell 673 on processor 1
-    max() of rho = 1.17949837059 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 1.67390274005 at location (0.00050894412389 0.000631068896714 0.0045) in cell 2199 on processor 1
+ExecutionTime = 0.756601 s  ClockTime = 1 s
 
 Courant Number mean: 0.175983345395 max: 0.448570379911
 deltaT = 0.000634920634921
@@ -246,25 +186,7 @@ FDICPCG:  Solving for p, Initial residual = 1.2628280114e-05, Final residual = 9
 FDICPCG:  Solving for p, Initial residual = 2.32433216951e-06, Final residual = 7.17331970221e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 2.42225970708e-05, global = 2.42223277175e-05, cumulative = -0.0004539860319
-ExecutionTime = 1.316461 s  ClockTime = 1 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101328.597114 at location (0.000417131993116 0.000521561900657 0.2145) in cell 3116 on processor 6
-    min() of T = 300.000378802 at location (-0.000143951180723 0.00145036143344 0.2145) in cell 2760 on processor 6
-    min() of rho = 1.17401006299 at location (0.00050894412389 0.000631068896714 0.2145) in cell 3081 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.38672455626 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101795.309486 at location (-0.00145036143344 -0.000143951180723 0.0225) in cell 1096 on processor 1
-    max() of T = 300.41111452 at location (0.00050894412389 -0.000631068896714 0.0105) in cell 829 on processor 1
-    max() of rho = 1.1791807644 at location (-0.00145036143344 0.000143951180723 0.0225) in cell 1283 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.28959775708 at location (-0.000631068896714 -0.00050894412389 0.0705) in cell 1179 on processor 3
+ExecutionTime = 1.272929 s  ClockTime = 2 s
 
 Courant Number mean: 0.364816311713 max: 0.62882388495
 deltaT = 0.000761904761905
@@ -311,25 +233,7 @@ FDICPCG:  Solving for p, Initial residual = 9.30076753796e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 1.34410752126e-05, Final residual = 6.11104686185e-07, No Iterations 4
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.13589194946e-05, global = -5.6283169691e-06, cumulative = 8.14130847314e-05
-ExecutionTime = 1.848379 s  ClockTime = 2 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101215.301027 at location (7.5e-05 0 0.0105) in cell 1923 on processor 1
-    min() of T = 299.854352775 at location (0.00098619479098 0.000806686425472 0.0015) in cell 1077 on processor 1
-    min() of rho = 1.17229974344 at location (4.79267645815e-05 -0.000635796848411 0.0105) in cell 647 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.128793481665 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101331.362541 at location (-0.000921183618356 0.00112275891975 0.1725) in cell 1287 on processor 7
-    max() of T = 300.105828577 at location (4.79267645815e-05 0.000635796848411 0.0615) in cell 2973 on processor 3
-    max() of rho = 1.17411061204 at location (0.00112275891975 0.000921183618356 0.1605) in cell 2283 on processor 4
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 3.25284446803 at location (-0.00050894412389 0.000631068896714 0.2115) in cell 2937 on processor 6
+ExecutionTime = 1.803044 s  ClockTime = 2 s
 
 Courant Number mean: 0.562668455494 max: 0.876249592663
 deltaT = 0.000761904761905
@@ -376,25 +280,7 @@ FDICPCG:  Solving for p, Initial residual = 1.15499894635e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 1.93707740256e-06, Final residual = 6.72240085433e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 3.40810621323e-05, global = -3.40810621323e-05, cumulative = 0.00041965211113
-ExecutionTime = 2.366648 s  ClockTime = 2 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 100921.644454 at location (0.00112275891975 -0.000921183618356 0.0585) in cell 138 on processor 3
-    min() of T = 299.678280799 at location (-0.000731612067518 0.000593240863629 0.0015) in cell 1393 on processor 1
-    min() of rho = 1.16961769886 at location (0.00145036143344 0.000143951180723 0.0555) in cell 383 on processor 3
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.000464652811168 at location (-0.00112275891975 -0.000921183618356 0.0945) in cell 272 on processor 2
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101317.998265 at location (0.000921183618356 -0.00112275891975 0.2145) in cell 770 on processor 6
-    max() of T = 299.998116243 at location (-0.00145036143344 0.000143951180723 0.2145) in cell 1479 on processor 6
-    max() of rho = 1.17390941544 at location (0.000806686425472 -0.00098619479098 0.2145) in cell 1069 on processor 6
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 1.99615710918 at location (0.000521561900657 -0.000417131993116 0.0045) in cell 816 on processor 1
+ExecutionTime = 2.341719 s  ClockTime = 3 s
 
 Courant Number mean: 0.351096060148 max: 0.88594646813
 deltaT = 0.000761904761905
@@ -441,25 +327,7 @@ FDICPCG:  Solving for p, Initial residual = 0.000152299666572, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 2.14783278832e-05, Final residual = 8.90095027442e-07, No Iterations 5
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.16304336574e-05, global = -6.36562528306e-06, cumulative = -5.56484339536e-05
-ExecutionTime = 2.922104 s  ClockTime = 3 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101244.171868 at location (-0.000143951180723 0.00145036143344 0.0045) in cell 1486 on processor 1
-    min() of T = 299.803460525 at location (0.000731612067518 0.000593240863629 0.0045) in cell 1815 on processor 1
-    min() of rho = 1.17297957924 at location (-0.000921183618356 0.00112275891975 0.0015) in cell 766 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.000731512705486 at location (-0.00128182359293 -0.000684717849968 0.0765) in cell 768 on processor 3
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101325.501864 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-    max() of T = 300.028862037 at location (0.000921183618356 -0.00112275891975 0.0975) in cell 378 on processor 2
-    max() of rho = 1.17422002052 at location (-0.000104101843075 0.00111232387498 0.1155) in cell 2412 on processor 5
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 1.99072469637 at location (0.000402408404233 -0.000317232107357 0.0045) in cell 972 on processor 1
+ExecutionTime = 2.937287 s  ClockTime = 3 s
 
 Courant Number mean: 0.214043254388 max: 0.907166449042
 deltaT = 0.000761904761905
@@ -506,25 +374,7 @@ FDICPCG:  Solving for p, Initial residual = 1.37179944218e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 2.40785226491e-06, Final residual = 5.70121662378e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 2.47042715703e-05, global = 2.45629997733e-05, cumulative = -0.000457825956152
-ExecutionTime = 3.406825 s  ClockTime = 3 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101329.986538 at location (-9.73902352125e-22 -7.5e-05 0.2145) in cell 2659 on processor 6
-    min() of T = 300.000635444 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
-    min() of rho = 1.17402383568 at location (-0.000806686425472 0.00098619479098 0.2145) in cell 2601 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.176959862014 at location (-0.000143951180723 0.00145036143344 0.0495) in cell 2618 on processor 0
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101774.259106 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
-    max() of T = 300.260599234 at location (0.000417131993116 -0.000521561900657 0.0165) in cell 1365 on processor 1
-    max() of rho = 1.17880149437 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.06419338777 at location (0.0003 -0.000225 0.0045) in cell 956 on processor 1
+ExecutionTime = 3.425779 s  ClockTime = 4 s
 
 Courant Number mean: 0.320903256964 max: 0.917923244421
 deltaT = 0.000761904761905
@@ -571,25 +421,7 @@ FDICPCG:  Solving for p, Initial residual = 3.04584580593e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 4.36531653287e-06, Final residual = 8.3677610827e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.88946798339e-05, global = 1.88314860125e-05, cumulative = -0.000172358744147
-ExecutionTime = 3.923486 s  ClockTime = 4 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101326.179753 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
-    min() of T = 299.996030853 at location (-0.000921183618356 -0.00112275891975 0.1725) in cell 130 on processor 7
-    min() of rho = 1.17398953593 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.192030553289 at location (0.000143951180723 0.00145036143344 0.0075) in cell 1891 on processor 1
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101567.287643 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
-    max() of T = 300.262906124 at location (0.000635796848411 -4.79267645815e-05 0.0195) in cell 2526 on processor 1
-    max() of rho = 1.17679463891 at location (-0.000422323112718 -0.0013923955476 0.0015) in cell 2 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 3.05563887233 at location (0.000317232107357 0.000402408404233 0.2055) in cell 2991 on processor 6
+ExecutionTime = 3.95419 s  ClockTime = 4 s
 
 Courant Number mean: 0.52606612571 max: 0.932921310236
 deltaT = 0.000714285714286
@@ -636,25 +468,7 @@ FDICPCG:  Solving for p, Initial residual = 1.1895147381e-05, Final residual = 9
 FDICPCG:  Solving for p, Initial residual = 2.19622220725e-06, Final residual = 8.42515549801e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.61647938961e-05, global = -1.61647938961e-05, cumulative = 0.000245321395071
-ExecutionTime = 4.453895 s  ClockTime = 4 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101026.55824 at location (0.00145036143344 -0.000143951180723 0.0165) in cell 934 on processor 1
-    min() of T = 299.789835291 at location (0.00098619479098 0.000806686425472 0.0015) in cell 1077 on processor 1
-    min() of rho = 1.17072890817 at location (1.94780470425e-21 -0.000225 0.0195) in cell 1934 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.13592286664 at location (-0.00145036143344 0.000143951180723 0.0495) in cell 1283 on processor 0
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101323.041264 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
-    max() of T = 299.999193855 at location (-0.000143951180723 -0.00145036143344 0.2145) in cell 276 on processor 6
-    max() of rho = 1.17396532168 at location (-0.000417131993116 0.000521561900657 0.2145) in cell 3068 on processor 6
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.86829963281 at location (0.000225 0.0003 0.2055) in cell 2901 on processor 6
+ExecutionTime = 4.499334 s  ClockTime = 5 s
 
 Courant Number mean: 0.439957584074 max: 0.878446302053
 deltaT = 0.000714285714286
@@ -701,25 +515,7 @@ FDICPCG:  Solving for p, Initial residual = 2.16127070971e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 3.16383582363e-06, Final residual = 7.41996425297e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 2.33190055489e-05, global = -2.32987672747e-05, cumulative = 0.000227845873125
-ExecutionTime = 4.9418 s  ClockTime = 5 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101048.979768 at location (-0.00145036143344 -0.000143951180723 0.0045) in cell 268 on processor 1
-    min() of T = 299.72937853 at location (4.79267645815e-05 0.000635796848411 0.0045) in cell 2881 on processor 1
-    min() of rho = 1.17090495642 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.000920474824084 at location (-0.00137647025719 0.000135240567485 0.0855) in cell 465 on processor 2
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101321.259354 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-    max() of T = 299.999102512 at location (-0.00145036143344 0.000143951180723 0.2145) in cell 1479 on processor 6
-    max() of rho = 1.17394753904 at location (-4.79267645815e-05 0.000635796848411 0.2145) in cell 3165 on processor 6
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.17847115948 at location (-1.94780470425e-21 -7.5e-05 0.0105) in cell 1718 on processor 1
+ExecutionTime = 5.002495 s  ClockTime = 5 s
 
 Courant Number mean: 0.263075106454 max: 0.874190832093
 deltaT = 0.000714285714286
@@ -766,25 +562,7 @@ FDICPCG:  Solving for p, Initial residual = 2.21628772635e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 3.59559488886e-06, Final residual = 8.15234455421e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 9.3771272667e-06, global = 8.06032458052e-06, cumulative = -0.000208793682004
-ExecutionTime = 5.449588 s  ClockTime = 5 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101326.285009 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-    min() of T = 299.957742084 at location (2.04519493946e-20 0.000375 0.0075) in cell 2632 on processor 1
-    min() of rho = 1.17398767634 at location (-0.00112275891975 0.000921183618356 0.2145) in cell 2084 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.000260254067128 at location (-0.00145036143344 -0.000143951180723 0.1425) in cell 366 on processor 4
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101484.921386 at location (0.000143951180723 0.00145036143344 0.0015) in cell 1487 on processor 1
-    max() of T = 300.10828989 at location (-0.00105742618627 0.000866407780411 0.0015) in cell 747 on processor 1
-    max() of rho = 1.17596190017 at location (2.04519493946e-20 0.000375 0.0075) in cell 2632 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.21308266626 at location (-1.94780470425e-21 -7.5e-05 0.0105) in cell 1718 on processor 1
+ExecutionTime = 5.513947 s  ClockTime = 6 s
 
 Courant Number mean: 0.230390244275 max: 0.871876714777
 deltaT = 0.000714285714286
@@ -831,25 +609,7 @@ FDICPCG:  Solving for p, Initial residual = 1.5407442299e-05, Final residual = 6
 FDICPCG:  Solving for p, Initial residual = 2.33604729783e-06, Final residual = 6.17927676561e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 2.01059976155e-05, global = 2.00969967803e-05, cumulative = -0.000374360961722
-ExecutionTime = 5.955205 s  ClockTime = 6 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101329.918305 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
-    min() of T = 299.999587016 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-    min() of rho = 1.17402412439 at location (0.00098619479098 -0.000806686425472 0.2145) in cell 1255 on processor 6
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.166438604827 at location (0.00145036143344 0.000143951180723 0.0075) in cell 629 on processor 1
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101681.419941 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
-    max() of T = 300.248048912 at location (-0.000317232107357 0.000402408404233 0.0255) in cell 3108 on processor 1
-    max() of rho = 1.17788590468 at location (0.000143951180723 -0.00145036143344 0.0015) in cell 4 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.49265272667 at location (0 7.5e-05 0.1995) in cell 2116 on processor 6
+ExecutionTime = 6.035407 s  ClockTime = 6 s
 
 Courant Number mean: 0.372323436089 max: 0.875206510606
 deltaT = 0.000714285714286
@@ -896,25 +656,7 @@ FDICPCG:  Solving for p, Initial residual = 7.731415383e-05, Final residual = 7.
 FDICPCG:  Solving for p, Initial residual = 1.04862946878e-05, Final residual = 5.72128507186e-07, No Iterations 4
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 5.34772688557e-06, global = 4.90897155663e-06, cumulative = -2.49361724568e-05
-ExecutionTime = 6.492288 s  ClockTime = 6 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101316.031972 at location (2.92170705637e-21 7.5e-05 0.1725) in cell 2116 on processor 7
-    min() of T = 299.973573667 at location (0.00112275891975 -0.000921183618356 0.0015) in cell 90 on processor 1
-    min() of rho = 1.17374284507 at location (1.5582437634e-20 0.000375 0.1545) in cell 3050 on processor 4
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.17240525331 at location (0.00145036143344 0.000143951180723 0.0075) in cell 629 on processor 1
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101405.023563 at location (-0.000143951180723 0.00145036143344 0.0015) in cell 1290 on processor 1
-    max() of T = 300.15093309 at location (-7.5e-05 0.00015 0.0255) in cell 2989 on processor 1
-    max() of rho = 1.17500541512 at location (0.00112275891975 0.000921183618356 0.0015) in cell 778 on processor 1
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 3.29065177923 at location (-7.5e-05 -2.92170705637e-21 0.2025) in cell 2117 on processor 6
+ExecutionTime = 6.60191 s  ClockTime = 7 s
 
 Courant Number mean: 0.474477606599 max: 0.880072447479
 deltaT = 0.000714285714286
@@ -961,25 +703,7 @@ FDICPCG:  Solving for p, Initial residual = 1.36093454365e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 2.27949616845e-06, Final residual = 8.60293288325e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.6911486796e-05, global = -1.68539010515e-05, cumulative = 0.000242309148217
-ExecutionTime = 7.045896 s  ClockTime = 7 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101034.759529 at location (0.000143951180723 0.00145036143344 0.0045) in cell 1689 on processor 1
-    min() of T = 299.797985442 at location (0.000908537179302 0.000741577244729 0.0015) in cell 1245 on processor 1
-    min() of rho = 1.17090345276 at location (-0.00145036143344 0.000143951180723 0.0045) in cell 367 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.00118963166285 at location (0.000143951180723 -0.00145036143344 0.2145) in cell 375 on processor 6
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101322.341817 at location (-7.5e-05 0 0.2145) in cell 2792 on processor 6
-    max() of T = 299.99924852 at location (-0.000143951180723 -0.00145036143344 0.2145) in cell 276 on processor 6
-    max() of rho = 1.17396446363 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.71628808013 at location (-9.73902352125e-22 -7.5e-05 0.1425) in cell 1512 on processor 4
+ExecutionTime = 7.14097 s  ClockTime = 7 s
 
 Courant Number mean: 0.382763352074 max: 0.880182065901
 deltaT = 0.000714285714286
@@ -1026,25 +750,7 @@ FDICPCG:  Solving for p, Initial residual = 3.10810201961e-05, Final residual = 
 FDICPCG:  Solving for p, Initial residual = 4.41467921589e-06, Final residual = 8.67892955887e-07, No Iterations 3
 diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
 time step continuity errors : sum local = 1.43071856092e-05, global = -1.43071856092e-05, cumulative = 7.74028123136e-05
-ExecutionTime = 7.575494 s  ClockTime = 8 s
-
-
-
-volFieldValue mindomain_scalar write:
-    min() of p = 101170.453079 at location (0.000143951180723 0.00145036143344 0.0105) in cell 2089 on processor 1
-    min() of T = 299.803707839 at location (0.000225 0.0003 0.0105) in cell 2647 on processor 1
-    min() of rho = 1.17221850333 at location (-0.000143951180723 -0.00145036143344 0.0015) in cell 0 on processor 1
-
-volFieldValue mindomain_vector write:
-    minMag() of U = 0.00227750978894 at location (0.00105742618627 -0.000866407780411 0.0915) in cell 362 on processor 2
-
-volFieldValue maxdomain_scalar write:
-    max() of p = 101323.498722 at location (0.00112275891975 -0.000921183618356 0.2145) in cell 931 on processor 6
-    max() of T = 299.999566737 at location (0.000143951180723 0.00145036143344 0.2145) in cell 2879 on processor 6
-    max() of rho = 1.17397627669 at location (-4.86951176062e-21 7.5e-05 0.2145) in cell 2905 on processor 6
-
-volFieldValue maxdomain_vector write:
-    maxMag() of U = 2.36409507828 at location (-7.5e-05 0 0.0165) in cell 2310 on processor 1
+ExecutionTime = 7.679733 s  ClockTime = 8 s
 
 End
 

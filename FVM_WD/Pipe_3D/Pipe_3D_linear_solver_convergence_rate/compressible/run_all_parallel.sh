@@ -17,4 +17,4 @@ rm -rf process*
 # paraFoam -builtin
 # paraFoam -block -builtin
 
-#mpirun -np 8 foamPostProcess -funcs '(vorticity PecletNo wallShearStress shearStress CourantNo Q)' -parallel
+#mpirun -np 8 foamPostProcess -funcs '(vorticity PecletNo wallShearStress shearStress CourantNo Q enstrophy ﬂowType Lambda2 Q shearStress)' -parallel

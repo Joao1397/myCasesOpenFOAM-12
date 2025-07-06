@@ -8,9 +8,9 @@
 Build  : 12-17d01581437c
 Exec   : decomposePar -force
 Date   : Jul 05 2025
-Time   : 20:12:49
+Time   : 20:40:06
 Host   : "ElMakinon"
-PID    : 4555
+PID    : 7737
 I/O    : uncollated
 Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
 nProcs : 1
@@ -27,7 +27,7 @@ Calculating distribution of cells
 
 Selecting decomposer scotch
 
-Finished decomposition in 0.070279 s
+Finished decomposition in 0.069137 s
 
 Calculating original mesh data
 

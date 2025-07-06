@@ -14,24 +14,12 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-Residuals
-{
-    type                residuals;
-    libs                ("libutilityFunctionObjects.so");
-    enabled             true;
-    log                 false;
-    writeControl        outputTime;
-    fields              (U p rho T);
-}
-
-CourantNumber
-{
-    type                CourantNo;
-    libs                ("libfieldFunctionObjects.so");
-    enabled             true;
-    log                 false;
-    writeControl        outputTime;
-}
+#includeFunc residuals
+(
+    name = residuals,
+    fields = (p U T),
+    log = true
+)
 
 /*
 inMassFlow
@@ -71,6 +59,7 @@ outMassFlow
                     phi
     );
 }
+*/
 
 minmaxdomain_scalar
 {
@@ -144,5 +133,3 @@ yplus_field
     log                 false;
     writeControl        outputTime;
 }
-
-*/
