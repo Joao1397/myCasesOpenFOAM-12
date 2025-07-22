@@ -24,6 +24,7 @@ Residuals
     fields              (U p rho T);
 }
 
+/*
 CourantNumber
 {
     type                CourantNo;
@@ -32,6 +33,7 @@ CourantNumber
     log                 false;
     writeControl        outputTime;
 }
+*/
 
 /*
 inMassFlow

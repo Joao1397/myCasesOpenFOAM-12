@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 12-17d01581437c
 Exec   : reconstructPar -rm
-Date   : Jul 05 2025
-Time   : 20:40:15
+Date   : Jul 06 2025
+Time   : 12:18:35
 Host   : "ElMakinon"
-PID    : 7809
+PID    : 7200
 I/O    : uncollated
 Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
 nProcs : 1
@@ -37,16 +37,15 @@ Reconstructing FV fields
 
     Reconstructing volScalarFields
 
+        CrankNicolson:ddt0(rho,K)
         p_0
         CrankNicolson:ddt0(rho,h)
         rho
         CrankNicolson:ddt0(rho)
-        CrankNicolson:ddt0(p)
-        Co
-        CrankNicolson:ddt0(rho,K)
         p
         rho_0
         T
+        CrankNicolson:ddt0(p)
 
     Reconstructing volVectorFields
 
@@ -75,16 +74,15 @@ Reconstructing FV fields
 
     Reconstructing volScalarFields
 
+        CrankNicolson:ddt0(rho,K)
         p_0
         CrankNicolson:ddt0(rho,h)
         rho
         CrankNicolson:ddt0(rho)
-        CrankNicolson:ddt0(p)
-        Co
-        CrankNicolson:ddt0(rho,K)
         p
         rho_0
         T
+        CrankNicolson:ddt0(p)
 
     Reconstructing volVectorFields
 

@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 12-17d01581437c
 Exec   : checkMesh -writeSets -meshQuality -allGeometry -allTopology
-Date   : Jul 05 2025
-Time   : 20:40:05
+Date   : Jul 06 2025
+Time   : 12:18:14
 Host   : "ElMakinon"
-PID    : 7735
+PID    : 7126
 I/O    : uncollated
 Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
 nProcs : 1

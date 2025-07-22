@@ -20,8 +20,8 @@ startFrom       startTime;
 startTime       0.0;
 stopAt          endTime;
 endTime         0.01;
-deltaT          5.0e-4;		//Stable with nCorrectors 2;
-writeControl    adjustableRunTime; //runTime
+deltaT          5.0e-4;		// Stable with nCorrectors 2;
+writeControl    adjustableRunTime; // runTime
 writeInterval   0.005;
 purgeWrite      0;
 writeFormat     binary;
@@ -30,7 +30,7 @@ writeCompression off;
 timeFormat      general;
 timePrecision   6;
 runTimeModifiable yes;
-adjustTimeStep  yes;
+adjustTimeStep  no;
 
 maxCo           1;
 maxDeltaT       0.01;

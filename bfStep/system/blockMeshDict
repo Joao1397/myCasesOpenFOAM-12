@@ -1,0 +1,118 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.1; // Convert all lenghts to meters
+
+// h = 5.0 cm = 0.05 m
+// L = L_1 + L_2 = 40h = 200cm = 2.0 m
+// L_1 = 5h = 25 cm = 0.25 m
+// L_2 = 35h = 175 cm = 1.75 m
+
+vertices // Points are given in decameters    
+(
+    (0.0 0.0 0.0) // 0
+    (17.5 0.0 0.0) // 1
+    (17.5 0.5 0.0) // 2
+    (0.0 0.5 0.0) // 3
+    (0.0 0.0 0.1) // 4
+    (17.5 0.0 0.1) // 5 
+    (17.5 0.5 0.1) // 6
+    (0.0 0.5 0.1) // 7
+
+    (17.5 1.0 0.0) // 8
+    (0.0 1.0 0.0) // 9
+    (17.5 1.0 0.1) // 10
+    (0.0 1.0 0.1) // 11
+
+    (-2.5 0.5 0.0) // 12
+    (-2.5 1.0 0.0) // 13
+    (-2.5 0.5 0.1) // 14
+    (-2.5 1.0 0.1) // 15
+);
+
+blocks          
+(
+    hex (0 1 2 3 4 5 6 7) (100 10 1) simpleGrading (1 1 1)
+    hex (3 2 8 9 7 6 10 11) (100 10 1) simpleGrading (1 1 1)
+    hex (12 3 9 13 14 7 11 15) (10 10 1) simpleGrading (1 1 1)
+);
+
+boundary       
+(
+
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (14 12 13 15)
+        );
+    }
+
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (1 2 6 5)
+            (2 8 10 6)
+        );
+    }
+
+    topWall
+    {
+        type wall;
+        faces
+        (
+            (10 8 9 11)
+            (11 9 13 15)
+        );
+    }
+
+    stepWall
+    {
+        type wall;
+        faces
+        (
+            (7 3 12 14)
+            (4 0 3 7)
+        );
+    }
+
+    baseWall
+    {
+        type wall;
+        faces
+        (
+            (5 1 4 0)
+        );
+    }
+
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (14 7 11 15)
+            (12 3 9 13)
+            (4 5 6 7)
+            (0 1 2 3)
+            (7 6 10 11)
+            (3 2 8 9)
+        );
+    }
+);
+
+// ************************************************************************* //

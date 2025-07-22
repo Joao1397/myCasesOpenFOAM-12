@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-[[22299,1],7]: A high-performance Open MPI point-to-point messaging module
+[[21242,1],3]: A high-performance Open MPI point-to-point messaging module
 was unable to find any relevant network interfaces:
 
 Module: OpenFabrics (openib)
@@ -17,23 +17,23 @@ lower performance.
 \*---------------------------------------------------------------------------*/
 Build  : 12-17d01581437c
 Exec   : renumberMesh -overwrite -parallel
-Date   : Jul 05 2025
-Time   : 20:40:06
+Date   : Jul 06 2025
+Time   : 12:18:16
 Host   : "ElMakinon"
-PID    : 7742
+PID    : 7133
 I/O    : uncollated
 Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/FVM_WD/Pipe_3D/Pipe_3D_linear_solver_convergence_rate/compressible
 nProcs : 8
 Slaves : 
 7
 (
-"ElMakinon.7743"
-"ElMakinon.7744"
-"ElMakinon.7745"
-"ElMakinon.7746"
-"ElMakinon.7747"
-"ElMakinon.7748"
-"ElMakinon.7749"
+"ElMakinon.7134"
+"ElMakinon.7135"
+"ElMakinon.7136"
+"ElMakinon.7137"
+"ElMakinon.7138"
+"ElMakinon.7139"
+"ElMakinon.7140"
 )
 
 Pstream initialised with:
