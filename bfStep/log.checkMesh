@@ -5,14 +5,14 @@
     \\  /    A nd           | Version:  12
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
-Build  : 12-17d01581437c
-Exec   : checkMesh -writeSets -meshQuality -allGeometry -allTopology
-Date   : Jul 20 2025
-Time   : 10:43:51
-Host   : "ElMakinon"
-PID    : 6309
+Build  : 12-57574591d9e1
+Exec   : checkMesh -writeSets -writeSurfaces -meshQuality -allGeometry -allTopology
+Date   : Jul 26 2025
+Time   : 22:50:41
+Host   : "ElMakiLinux"
+PID    : 30514
 I/O    : uncollated
-Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/bfStep
+Case   : /home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -29,34 +29,39 @@ Enabling all geometry checks.
 
 Enabling user-defined geometry checks.
 
+Reconstructing and writing surface representation of the faceSets and cellSets of problem faces in vtk format
+
 Reconstructing and writing the problem points in vtk format
 
 Time = 0s
 
 Mesh stats
-    points:           4462
+    points:           35190
     internal points:  0
-    edges:            10891
-    internal edges:   1971
+    edges:            87343
+    internal edges:   16987
     internal edges using one boundary point:   0
-    internal edges using two boundary points:  1971
-    faces:            8530
-    internal faces:   4070
-    cells:            2100
-    faces per cell:   6
+    internal edges using two boundary points:  16987
+    faces:            69434
+    internal faces:   34266
+    cells:            17280
+    faces per cell:   6.00115740741
     boundary patches: 6
     point zones:      0
     face zones:       0
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     2100
+    hexahedra:     17260
     prisms:        0
     wedges:        0
     pyramids:      0
     tet wedges:    0
     tetrahedra:    0
-    polyhedra:     0
+    polyhedra:     20
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            7   20
 
 Checking topology...
     Boundary definition OK.
@@ -70,58 +75,59 @@ Checking topology...
     Number of regions: 1 (OK).
 
 Checking patch topology for multiply connected surfaces...
-    Patch               Faces    Points   Surface topology                  
-    inlet               10       22       ok (non-closed singly connected)  
-    outlet              20       42       ok (non-closed singly connected)  
-    topWall             110      222      ok (non-closed singly connected)  
-    stepWall            20       42       ok (non-closed singly connected)  
-    baseWall            100      202      ok (non-closed singly connected)  
-    frontAndBack        4200     4462     ok (non-closed singly connected)  
+                   Patch    Faces   Points                  Surface topology
+                   inlet       20       42  ok (non-closed singly connected)
+                  outlet       80      162  ok (non-closed singly connected)
+                 topWall      234      470  ok (non-closed singly connected)
+                stepWall       64      130  ok (non-closed singly connected)
+                baseWall      210      422  ok (non-closed singly connected)
+            frontAndBack    34560    35190  ok (non-closed singly connected)
 
 Checking geometry...
-    Overall domain bounding box (-0.25 0 0) (1.75 0.1 0.01)
+    Overall domain bounding box (-0.25 -0.05 0) (1.75 0.05 0.1)
     Patch bounding boxes
-        inlet                (-0.25 0.05 0) (-0.25 0.1 0.01)
-        outlet               (1.75 0 0) (1.75 0.1 0.01)
-        topWall              (-0.25 0.1 0) (1.75 0.1 0.01)
-        stepWall             (-0.25 0 0) (0 0.05 0.01)
-        baseWall             (0 0 0) (1.75 0 0.01)
-        frontAndBack         (-0.25 0 0) (1.75 0.1 0.01)
+                       inlet (-0.25 0 0) (-0.25 0.05 0.1)
+                      outlet (1.75 -0.05 0) (1.75 0.05 0.1)
+                     topWall (-0.25 0.05 0) (1.75 0.05 0.1)
+                    stepWall (-0.25 -0.05 0) (0 0 0.1)
+                    baseWall (0 -0.05 0) (1.75 -0.05 0.1)
+                frontAndBack (-0.25 -0.05 0) (1.75 0.05 0.1)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Max cell openness = 1.73472347598e-16 OK.
-    Max aspect ratio = 5 OK.
-    Minimum face area = 5e-05. Maximum face area = 0.00025.  Face area magnitudes OK.
-    Min volume = 8.75e-07. Max volume = 1.25e-06.  Total volume = 0.001875.  Cell volumes OK.
-    Mesh non-orthogonality Max: 0 average: 0
+    Max cell openness = 2.16840434497e-16 OK.
+    Max aspect ratio = 6.66666666667 OK.
+    Minimum face area = 1.04166666667e-05. Maximum face area = 0.00104166666667.  Face area magnitudes OK.
+    Min volume = 1.04166666667e-06. Max volume = 2.60416666667e-06.  Total volume = 0.01875.  Cell volumes OK.
+    Mesh non-orthogonality Max: 3.81407483429 average: 0.130288895811
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 7.61295788314e-14 OK.
+    Max skewness = 0.147820023386 OK.
     Coupled point location match (average 0) OK.
     Face tets OK.
-    Min/max edge length = 0.005 0.025 OK.
+    Min/max edge length = 0.00125 0.1 OK.
     All angles in faces OK.
     Face flatness (1 = flat, 0 = butterfly) : min = 1  average = 1
     All face flatness OK.
-    Cell determinant (wellposedness) : minimum: 0.276620449423 average: 1.88268418974
+    Cell determinant (wellposedness) : minimum: 0.17058612069 average: 0.851480725205
     Cell determinant check OK.
-    Concave cell check OK.
-    Face interpolation weight : minimum: 0.411764705882 average: 0.499783205666
+ ***Concave cells (using face planes) found, number of cells: 20
+  <<Writing 20 concave cells to set concaveCells
+    Face interpolation weight : minimum: 0.444444444444 average: 0.499935147895
     Face interpolation weight check OK.
-    Face volume ratio : minimum: 0.7 average: 0.999262899263
+    Face volume ratio : minimum: 0.4 average: 0.999299597268
     Face volume ratio check OK.
 Checking faces in error :
-    non-orthogonality > 70  degrees                        : 0
+    non-orthogonality >  70 degrees                        : 0
     faces with face pyramid volume < 1e-13                 : 0
-    faces with concavity > 80  degrees                     : 0
-    faces with skewness > 4   (internal) or 20  (boundary) : 0
-    faces with interpolation weights (0..1)  < 0.05        : 0
-    faces with volume ratio of neighbour cells < 0.01      : 0
-    faces with face twist < 0.02                           : 0
+    faces with concavity >  80 degrees                     : 0
+    faces with skewness >   4 (internal) or  20 (boundary) : 0
+    faces with interpolation weights (0..1)  <  0.05       : 0
+    faces with volume ratio of neighbour cells <  0.01     : 0
+    faces with face twist <  0.02                          : 0
     faces on cells with determinant < 0.001                : 0
 
-Mesh OK.
+Failed 1 mesh checks.
 
 End
 

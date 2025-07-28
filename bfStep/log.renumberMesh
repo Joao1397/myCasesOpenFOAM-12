@@ -1,0 +1,74 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-57574591d9e1
+Exec   : renumberMesh -overwrite -parallel
+Date   : Jul 26 2025
+Time   : 22:50:45
+Host   : "ElMakiLinux"
+PID    : 30565
+I/O    : uncollated
+Case   : /home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep
+nProcs : 8
+Slaves : 
+7
+(
+"ElMakiLinux.30566"
+"ElMakiLinux.30567"
+"ElMakiLinux.30568"
+"ElMakiLinux.30569"
+"ElMakiLinux.30570"
+"ElMakiLinux.30571"
+"ElMakiLinux.30572"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 17280
+Before renumbering :
+    band           : 2124
+    profile        : 1218550
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+Reading volScalarField p
+Reading volScalarField nut
+Reading volScalarField k
+Reading volScalarField epsilon
+Reading volVectorField U
+
+Renumbering processor cell decomposition map cellProcAddressing
+Renumbering processor face decomposition map faceProcAddressing
+Renumbering processor point decomposition map pointProcAddressing
+After renumbering :
+    band           : 52
+    profile        : 539059
+
+Writing mesh to "constant"
+
+Renumbering cellSets:
+    concaveCells
+    twoInternalFacesCells
+End
+
+Finalising parallel run

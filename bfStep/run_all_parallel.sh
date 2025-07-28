@@ -6,12 +6,12 @@ rm *.foam
 rm -rf postProcessing
 rm -rf process*
 blockMesh | tee log.blockMesh
-checkMesh -writeSets -meshQuality -allGeometry -allTopology | tee log.checkMesh
-# decomposePar -force | tee log.decomposePar
-# mpirun -np 8 renumberMesh -overwrite -parallel | tee log.renumberMesh
-# mpirun -np 8 foamRun -parallel | tee log.foamRun
-# reconstructPar -rm | tee log.reconstructPar
-# rm -rf process*
+checkMesh -writeSets -writeSurfaces -meshQuality -allGeometry -allTopology | tee log.checkMesh
+decomposePar -force | tee log.decomposePar
+mpirun -np 8 renumberMesh -overwrite -parallel | tee log.renumberMesh
+mpirun -np 8 foamRun -parallel | tee log.foamRun
+reconstructPar -rm -latestTime | tee log.reconstructPar
+rm -rf process*
 # mpirun -np 8 foamPostProcess -func CourantNo -parallel | tee log.foamPostProcess
 # mpirun -np 8 foamPostProcess -func sampleDict -parallel | tee log.foamPostProcess
 # gnuplot gnuplot/gnuplot_script

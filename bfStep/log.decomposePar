@@ -1,0 +1,141 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-57574591d9e1
+Exec   : decomposePar -force
+Date   : Jul 26 2025
+Time   : 22:50:41
+Host   : "ElMakiLinux"
+PID    : 30534
+I/O    : uncollated
+Case   : /home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Removing 0 existing processor directories
+
+Calculating distribution of cells
+
+Selecting decomposer scotch
+
+Finished decomposition in 0.233965 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 2162
+    Number of faces shared with processor 1 = 52
+    Number of faces shared with processor 2 = 1
+    Number of faces shared with processor 3 = 41
+    Number of processor patches = 3
+    Number of processor faces = 94
+    Number of boundary faces = 4418
+
+Processor 1
+    Number of cells = 2177
+    Number of faces shared with processor 0 = 52
+    Number of faces shared with processor 2 = 43
+    Number of processor patches = 2
+    Number of processor faces = 95
+    Number of boundary faces = 4449
+
+Processor 2
+    Number of cells = 2160
+    Number of faces shared with processor 0 = 1
+    Number of faces shared with processor 1 = 43
+    Number of faces shared with processor 3 = 56
+    Number of faces shared with processor 7 = 42
+    Number of processor patches = 4
+    Number of processor faces = 142
+    Number of boundary faces = 4374
+
+Processor 3
+    Number of cells = 2139
+    Number of faces shared with processor 0 = 41
+    Number of faces shared with processor 2 = 56
+    Number of faces shared with processor 6 = 38
+    Number of faces shared with processor 7 = 6
+    Number of processor patches = 4
+    Number of processor faces = 141
+    Number of boundary faces = 4329
+
+Processor 4
+    Number of cells = 2162
+    Number of faces shared with processor 5 = 56
+    Number of faces shared with processor 7 = 44
+    Number of processor patches = 2
+    Number of processor faces = 100
+    Number of boundary faces = 4447
+
+Processor 5
+    Number of cells = 2160
+    Number of faces shared with processor 4 = 56
+    Number of faces shared with processor 6 = 39
+    Number of faces shared with processor 7 = 14
+    Number of processor patches = 3
+    Number of processor faces = 109
+    Number of boundary faces = 4402
+
+Processor 6
+    Number of cells = 2139
+    Number of faces shared with processor 3 = 38
+    Number of faces shared with processor 5 = 39
+    Number of faces shared with processor 7 = 57
+    Number of processor patches = 3
+    Number of processor faces = 134
+    Number of boundary faces = 4344
+
+Processor 7
+    Number of cells = 2181
+    Number of faces shared with processor 2 = 42
+    Number of faces shared with processor 3 = 6
+    Number of faces shared with processor 4 = 44
+    Number of faces shared with processor 5 = 14
+    Number of faces shared with processor 6 = 57
+    Number of processor patches = 5
+    Number of processor faces = 163
+    Number of boundary faces = 4405
+
+Number of processor faces = 489
+Max number of cells = 2181 (0.972222222222% above average 2160)
+Max number of processor patches = 5 (53.8461538462% above average 3.25)
+Max number of faces between processors = 163 (33.3333333333% above average 122.25)
+
+Time = 0s
+
+Decomposing FV fields
+
+    Decomposing volScalarFields
+
+        p
+        nut
+        k
+        epsilon
+
+    Decomposing volVectorFields
+
+        U
+
+Decomposing point fields
+
+    (no point fields)
+
+End
+

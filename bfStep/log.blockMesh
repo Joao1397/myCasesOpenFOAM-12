@@ -5,14 +5,14 @@
     \\  /    A nd           | Version:  12
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
-Build  : 12-17d01581437c
+Build  : 12-57574591d9e1
 Exec   : blockMesh
-Date   : Jul 20 2025
-Time   : 10:43:51
-Host   : "ElMakinon"
-PID    : 6307
+Date   : Jul 26 2025
+Time   : 22:50:41
+Host   : "ElMakiLinux"
+PID    : 30494
 I/O    : uncollated
-Case   : /home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/bfStep
+Case   : /home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -22,11 +22,19 @@ allowSystemOperations : Allowing user-supplied system call operations
 Create time
 
 Deleting polyMesh directory
-    "/home/cfd/OpenFOAM/cfd-12/myCasesOpenFOAM-12/bfStep/constant/polyMesh"
+    "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/constant/polyMesh"
 Reading "blockMeshDict"
 
 Creating block mesh from
     "system/blockMeshDict"
+Expanding #calc at line 25 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 26 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 27 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 28 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 29 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 30 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 31 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
+Expanding #calc at line 32 in file "/home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep/system/blockMeshDict"
 No non-linear block edges defined
 No non-planar block faces defined
 Creating topology blocks
@@ -37,9 +45,9 @@ Creating block mesh topology
 Check topology
 
 	Basic statistics
-		Number of internal faces : 2
-		Number of boundary faces : 14
-		Number of defined boundary faces : 14
+		Number of internal faces : 0
+		Number of boundary faces : 18
+		Number of defined boundary faces : 18
 		Number of undefined boundary faces : 0
 	Checking patch -> block consistency
 
@@ -49,40 +57,60 @@ Creating merge list .
 Creating polyMesh from blockMesh
 Creating patches
 Creating cells
-Creating points with scale 0.1
+Creating points with scale 1
     Block 0 cell size :
-        i : 0.0175 .. 0.0175
-        j : 0.005 .. 0.005
-        k : 0.01
+        i : 0.0104166666667
+        j : 0.0025 .. 0.0025
+        k : 0.1
     Block 1 cell size :
-        i : 0.0175 .. 0.0175
-        j : 0.005 .. 0.005
-        k : 0.01
+        i : 0.00833333333333 .. 0.00833333333333
+        j : 0.00125 .. 0.00125
+        k : 0.1
     Block 2 cell size :
-        i : 0.025 .. 0.025
-        j : 0.005 .. 0.005
-        k : 0.01
-
-No patch pairs to merge
+        i : 0.00833333333333 .. 0.00833333333333
+        j : 0.00125 .. 0.00125
+        k : 0.1
+Merging patch pair (interface1 interface2)
+facePatchIntersection: Intersecting 20 source faces and 40 target faces
+    triPatchIntersection: Intersecting 40 source tri faces and 80 target tri faces
+        Source/target coverage = 1/1
+        Faces by number of edges = (0 0 0 120 5)
+        Edges by number of faces = (0 82 149)
+        125 faces generated in 0.001077s
+    Source/target coverage = 1/1
+    Faces by number of edges = (0 0 0 0 40)
+    Edges by number of faces = (0 82 39)
+    40 couplings generated in 0.00137s
+Merging patch pair (interface3 interface4)
+facePatchIntersection: Intersecting 210 source faces and 210 target faces
+    triPatchIntersection: Intersecting 420 source tri faces and 420 target tri faces
+        Source/target coverage = 1/1
+        Faces by number of edges = (0 0 0 524)
+        Edges by number of faces = (0 422 575)
+        524 faces generated in 0.003074s
+    Source/target coverage = 1/1
+    Faces by number of edges = (0 0 0 0 210)
+    Edges by number of faces = (0 422 209)
+    210 couplings generated in 0.003978s
 
 Writing polyMesh
 ----------------
 Mesh Information
 ----------------
-  boundingBox: (-0.25 0 0) (1.75 0.1 0.01)
-  nPoints: 4462
-  nCells: 2100
-  nFaces: 8530
-  nInternalFaces: 4070
+  boundingBox: (-0.25 -0.05 0) (1.75 0.05 0.1)
+  nPoints: 35190
+  nCells: 17280
+  nFaces: 69434
+  nInternalFaces: 34266
 ----------------
 Patches
 ----------------
-  patch 0 (start: 4070 size: 10) name: inlet
-  patch 1 (start: 4080 size: 20) name: outlet
-  patch 2 (start: 4100 size: 110) name: topWall
-  patch 3 (start: 4210 size: 20) name: stepWall
-  patch 4 (start: 4230 size: 100) name: baseWall
-  patch 5 (start: 4330 size: 4200) name: frontAndBack
+  patch 0 (start: 34266 size: 20) name: inlet
+  patch 1 (start: 34286 size: 80) name: outlet
+  patch 2 (start: 34366 size: 234) name: topWall
+  patch 3 (start: 34600 size: 64) name: stepWall
+  patch 4 (start: 34664 size: 210) name: baseWall
+  patch 5 (start: 34874 size: 34560) name: frontAndBack
 
 End
 

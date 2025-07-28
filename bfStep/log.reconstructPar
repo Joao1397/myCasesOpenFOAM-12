@@ -1,0 +1,62 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 12-57574591d9e1
+Exec   : reconstructPar -rm -latestTime
+Date   : Jul 26 2025
+Time   : 23:08:09
+Host   : "ElMakiLinux"
+PID    : 34258
+I/O    : uncollated
+Case   : /home/josedasilva/Downloads/myCasesOpenFOAM-12/bfStep
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reconstructing meshes
+
+    Merging mesh 0 with 1
+    Merging mesh 2 with 3
+    Merging mesh 4 with 5
+    Merging mesh 6 with 7
+    Merging mesh 0 with 2
+    Merging mesh 4 with 6
+    Merging mesh 0 with 4
+
+Time = 2000s
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p
+        nut
+        k
+        epsilon
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+
+Reconstructing point fields
+
+    (no point fields)
+
+Collecting uniform files
+
+Removing processors time directory
+
+End
+
